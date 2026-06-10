@@ -1,95 +1,13 @@
 // SPDX-License-Identifier: UNLICENSED
-pragma solidity ^0.8.27;
+pragma solidity ^0.8.28;
 
-interface IERC20 {
-    function balanceOf(address account) external view returns (uint256);
-    function transfer(address to, uint256 amount) external returns (bool);
-    function transferFrom(address from, address to, uint256 amount) external returns (bool);
-    function approve(address spender, uint256 amount) external returns (bool);
-}
+import "@openzeppelin/contracts/access/Ownable.sol";
+import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
+import "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol";
+import "@openzeppelin/contracts/utils/ReentrancyGuard.sol";
 
 interface IGPULease {
     function deposit(uint256 amount) external;
-}
-
-library SafeERC20 {
-    function safeTransfer(IERC20 token, address to, uint256 amount) internal {
-        _callOptionalReturn(
-            token,
-            abi.encodeWithSelector(token.transfer.selector, to, amount)
-        );
-    }
-
-    function safeTransferFrom(
-        IERC20 token,
-        address from,
-        address to,
-        uint256 amount
-    ) internal {
-        _callOptionalReturn(
-            token,
-            abi.encodeWithSelector(token.transferFrom.selector, from, to, amount)
-        );
-    }
-
-    function safeApprove(IERC20 token, address spender, uint256 amount) internal {
-        _callOptionalReturn(
-            token,
-            abi.encodeWithSelector(token.approve.selector, spender, amount)
-        );
-    }
-
-    function _callOptionalReturn(IERC20 token, bytes memory data) private {
-        (bool success, bytes memory returndata) = address(token).call(data);
-        require(success, "erc20 call failed");
-
-        if (returndata.length > 0) {
-            require(abi.decode(returndata, (bool)), "erc20 operation failed");
-        }
-    }
-}
-
-contract Ownable {
-    address public owner;
-
-    event OwnershipTransferred(
-        address indexed previousOwner,
-        address indexed newOwner
-    );
-
-    constructor(address initialOwner) {
-        require(initialOwner != address(0), "zero owner");
-        owner = initialOwner;
-        emit OwnershipTransferred(address(0), initialOwner);
-    }
-
-    modifier onlyOwner() {
-        require(msg.sender == owner, "not owner");
-        _;
-    }
-
-    function transferOwnership(address newOwner) external onlyOwner {
-        require(newOwner != address(0), "zero owner");
-        emit OwnershipTransferred(owner, newOwner);
-        owner = newOwner;
-    }
-}
-
-contract ReentrancyGuard {
-    uint256 private constant _NOT_ENTERED = 1;
-    uint256 private constant _ENTERED = 2;
-    uint256 private _status;
-
-    constructor() {
-        _status = _NOT_ENTERED;
-    }
-
-    modifier nonReentrant() {
-        require(_status != _ENTERED, "reentrant call");
-        _status = _ENTERED;
-        _;
-        _status = _NOT_ENTERED;
-    }
 }
 
 contract LLMFundraising is Ownable, ReentrancyGuard {
@@ -280,8 +198,7 @@ contract LLMFundraising is Ownable, ReentrancyGuard {
     function _transferToGPULease(uint256 amount) internal {
         require(amount > 0, "no funds");
 
-        usdc.safeApprove(address(gpuLease), 0);
-        usdc.safeApprove(address(gpuLease), amount);
+        usdc.forceApprove(address(gpuLease), amount);
 
         gpuLease.deposit(amount);
 

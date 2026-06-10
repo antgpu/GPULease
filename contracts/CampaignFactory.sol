@@ -1,7 +1,10 @@
 // SPDX-License-Identifier: UNLICENSED
-pragma solidity ^0.8.27;
+pragma solidity ^0.8.28;
 
-import "./Campaign.sol";
+import "@openzeppelin/contracts/access/Ownable.sol";
+import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
+
+import {IGPULease, LLMFundraising} from "./Campaign.sol";
 
 contract LLMFundraisingFactory is Ownable {
     uint256 public nextCampaignId = 1;
