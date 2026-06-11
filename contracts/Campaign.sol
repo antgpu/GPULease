@@ -13,6 +13,10 @@ interface IGPULease {
 contract LLMFundraising is Ownable, ReentrancyGuard {
     using SafeERC20 for IERC20;
 
+    // Backer tiers are calculated in basis points (bps) of the campaign target.
+    // BPS is 100%, so 100 bps = 1%, 500 bps = 5%, and 1,500 bps = 15%.
+    // A donor's total donations are divided by targetAmount to find their donated
+    // percentage, then compared with these minimum thresholds to assign a grade.
     uint256 private constant BPS = 10_000;
     uint256 private constant CONTRIBUTOR_MIN_BPS = 100;
     uint256 private constant FOUNDING_BACKER_MIN_BPS = 500;
