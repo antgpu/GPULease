@@ -52,8 +52,8 @@ contract LLMFundraisingFactory is Ownable, ICampaignParticipantRegistry {
         uint256 startTimestamp,
         uint256 templateId,
         string calldata campaignName
-    ) external returns (address campaign) {
-        uint256 campaignId = nextCampaignId;
+    ) external returns (uint256 campaignId, address campaign) {
+        campaignId = nextCampaignId;
         nextCampaignId += 1;
 
         campaign = address(

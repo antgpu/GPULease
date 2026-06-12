@@ -16,9 +16,18 @@ describe("LLMFundraising campaigns", function () {
   const campaignName = "Open LLM GPU Fund";
   const targetAmount = ethers.parseEther("1000");
 
-  async function deployCampaign() {
+  async function deployCampaign(expectedCampaignId = 1) {
     const block = await ethers.provider.getBlock("latest");
     if (!block) throw new Error("Cannot fetch latest block");
+
+    const [returnedCampaignId, returnedCampaignAddress] =
+      await factory.createCampaign.staticCall(
+        targetAmount,
+        7 * 24 * 60 * 60,
+        block.timestamp,
+        1,
+        campaignName
+      );
 
     await factory.createCampaign(
       targetAmount,
@@ -28,8 +37,17 @@ describe("LLMFundraising campaigns", function () {
       campaignName
     );
 
-    const campaignAddress = await factory.campaignById(1);
-    return ethers.getContractAt("LLMFundraising", campaignAddress);
+    const campaignAddress = await factory.campaignById(expectedCampaignId);
+    expect(returnedCampaignId).to.equal(expectedCampaignId);
+    expect(returnedCampaignAddress).to.equal(campaignAddress);
+
+    const campaign = await ethers.getContractAt(
+      "LLMFundraising",
+      campaignAddress
+    );
+    expect(await campaign.campaignId()).to.equal(expectedCampaignId);
+
+    return campaign;
   }
 
   beforeEach(async () => {

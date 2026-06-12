@@ -250,6 +250,11 @@
     "name": "createCampaign",
     "outputs": [
       {
+        "internalType": "uint256",
+        "name": "campaignId",
+        "type": "uint256"
+      },
+      {
         "internalType": "address",
         "name": "campaign",
         "type": "address"
