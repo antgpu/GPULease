@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "hardhat build",
+    "deploy:base:factory": "hardhat run scripts/deploy-campaign-factory.ts --network base",
+    "test": "hardhat test"
   },
   "keywords": [],
   "author": "",

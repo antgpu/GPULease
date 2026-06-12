@@ -1,6 +1,9 @@
 # Node modules
 /node_modules
 
+# Local secrets
+.env
+
 # Compilation output
 /dist
 

@@ -1,4 +1,6 @@
-0x222e1a492Ddd4B48b23Dab8005Ddadf67302D6f5 -- SC base address
+0x222e1a492Ddd4B48b23Dab8005Ddadf67302D6f5 -- main SC base address
+
+0x189e6b446A1DB5E0f38d52D00434f4B285B4dE11 -- campaign factory SC address
 
 0x307335a1f9b6cF8eB1Fb47628317a130871ADaBb -- treasury on base
 

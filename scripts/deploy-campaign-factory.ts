@@ -1,0 +1,36 @@
+import { network } from "hardhat";
+
+const USDC_ADDRESS = "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913";
+const GPULEASE_ADDRESS = "0x222e1a492Ddd4B48b23Dab8005Ddadf67302D6f5";
+
+async function main() {
+  const { ethers } = await network.connect();
+
+  if (!ethers.isAddress(USDC_ADDRESS)) {
+    throw new Error(`Invalid USDC address: ${USDC_ADDRESS}`);
+  }
+
+  if (!ethers.isAddress(GPULEASE_ADDRESS)) {
+    throw new Error(`Invalid GPULease address: ${GPULEASE_ADDRESS}`);
+  }
+
+  const [deployer] = await ethers.getSigners();
+  console.log("Deploying LLMFundraisingFactory from:", deployer.address);
+  console.log("USDC:", USDC_ADDRESS);
+  console.log("GPULease:", GPULEASE_ADDRESS);
+
+  const Factory = await ethers.getContractFactory("LLMFundraisingFactory");
+  const factory = await Factory.deploy(USDC_ADDRESS, GPULEASE_ADDRESS);
+  await factory.waitForDeployment();
+
+  const factoryAddress = await factory.getAddress();
+  console.log("LLMFundraisingFactory deployed to:", factoryAddress);
+  console.log("Constructor args:");
+  console.log(`  usdc: ${USDC_ADDRESS}`);
+  console.log(`  gpuLease: ${GPULEASE_ADDRESS}`);
+}
+
+main().catch((error) => {
+  console.error(error);
+  process.exitCode = 1;
+});

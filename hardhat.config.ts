@@ -1,5 +1,11 @@
 import hardhatToolboxMochaEthersPlugin from "@nomicfoundation/hardhat-toolbox-mocha-ethers";
 import { configVariable, defineConfig } from "hardhat/config";
+import { existsSync } from "node:fs";
+import { loadEnvFile } from "node:process";
+
+if (existsSync(".env")) {
+  loadEnvFile(".env");
+}
 
 export default defineConfig({
   plugins: [hardhatToolboxMochaEthersPlugin],
@@ -39,6 +45,12 @@ export default defineConfig({
       chainType: "l1",
       url: configVariable("SEPOLIA_RPC_URL"),
       accounts: [configVariable("SEPOLIA_PRIVATE_KEY")],
+    },
+    base: {
+      type: "http",
+      chainType: "op",
+      url: "https://mainnet.base.org",
+      accounts: [configVariable("BASE_PRIVATE_KEY")],
     },
   },
 });
