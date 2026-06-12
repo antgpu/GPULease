@@ -59,7 +59,6 @@ contract LLMFundraising is Ownable, ERC721, ReentrancyGuard {
     uint256 public immutable duration;
     uint256 public immutable templateId;
     string public campaignName;
-    string public campaignURI;
 
     IERC20 public immutable usdc;
     IGPULease public immutable gpuLease;
@@ -108,7 +107,6 @@ contract LLMFundraising is Ownable, ERC721, ReentrancyGuard {
         uint256 _startTimestamp,
         uint256 _templateId,
         string memory _campaignName,
-        string memory _campaignURI,
         address _usdc,
         address _gpuLease,
         address _participantRegistry,
@@ -127,7 +125,6 @@ contract LLMFundraising is Ownable, ERC721, ReentrancyGuard {
         startTimestamp = _startTimestamp;
         templateId = _templateId;
         campaignName = _campaignName;
-        campaignURI = _campaignURI;
 
         usdc = IERC20(_usdc);
         gpuLease = IGPULease(_gpuLease);

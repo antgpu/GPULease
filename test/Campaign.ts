@@ -14,7 +14,6 @@ describe("LLMFundraising campaigns", function () {
   let factory: any;
 
   const campaignName = "Open LLM GPU Fund";
-  const campaignURI = "ipfs://campaign";
   const targetAmount = ethers.parseEther("1000");
 
   async function deployCampaign() {
@@ -26,8 +25,7 @@ describe("LLMFundraising campaigns", function () {
       7 * 24 * 60 * 60,
       block.timestamp,
       1,
-      campaignName,
-      campaignURI
+      campaignName
     );
 
     const campaignAddress = await factory.campaignById(1);

@@ -31,8 +31,7 @@ contract LLMFundraisingFactory is Ownable, ICampaignParticipantRegistry {
         uint256 startTimestamp,
         uint256 duration,
         uint256 templateId,
-        string campaignName,
-        string campaignURI
+        string campaignName
     );
     event CampaignParticipantRegistered(
         address indexed participant,
@@ -52,8 +51,7 @@ contract LLMFundraisingFactory is Ownable, ICampaignParticipantRegistry {
         uint256 duration,
         uint256 startTimestamp,
         uint256 templateId,
-        string calldata campaignName,
-        string calldata campaignURI
+        string calldata campaignName
     ) external returns (address campaign) {
         uint256 campaignId = nextCampaignId;
         nextCampaignId += 1;
@@ -66,7 +64,6 @@ contract LLMFundraisingFactory is Ownable, ICampaignParticipantRegistry {
                 startTimestamp,
                 templateId,
                 campaignName,
-                campaignURI,
                 address(usdc),
                 address(gpuLease),
                 address(this),
@@ -87,8 +84,7 @@ contract LLMFundraisingFactory is Ownable, ICampaignParticipantRegistry {
             startTimestamp,
             duration,
             templateId,
-            campaignName,
-            campaignURI
+            campaignName
         );
     }
 
