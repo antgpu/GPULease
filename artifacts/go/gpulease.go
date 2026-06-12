@@ -35,113 +35,113 @@ type GPULeaseFrozenFundsInfo struct {
 	Amount  *big.Int
 }
 
-// GpuleaseMetaData contains all meta data concerning the Gpulease contract.
-var GpuleaseMetaData = &bind.MetaData{
+// GPULeaseMetaData contains all meta data concerning the GPULease contract.
+var GPULeaseMetaData = &bind.MetaData{
 	ABI: "[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"credit_\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"treasury_\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"}],\"name\":\"OwnableInvalidOwner\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"OwnableUnauthorizedAccount\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"token\",\"type\":\"address\"}],\"name\":\"SafeERC20FailedOperation\",\"type\":\"error\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"Deposit\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"leaseId\",\"type\":\"uint256\"}],\"name\":\"LeaseCompleted\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"leaseId\",\"type\":\"uint256\"}],\"name\":\"LeasePaused\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"leaseId\",\"type\":\"uint256\"}],\"name\":\"LeaseResumed\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"leaseId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"provider\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"duration\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"LeaseStarted\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"previousOwner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnershipTransferred\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"Withdraw\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"balances\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_leaseId\",\"type\":\"uint256\"}],\"name\":\"completeLease\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"credit\",\"outputs\":[{\"internalType\":\"contractIERC20\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"deposit\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"frozenFunds\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"}],\"name\":\"getUserFrozenFunds\",\"outputs\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"leaseId\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"internalType\":\"structGPULease.FrozenFundsInfo[]\",\"name\":\"result\",\"type\":\"tuple[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"leaseCount\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"leases\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"provider\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"startTime\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"duration\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"storagePricePerSecond\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"computePricePerSecond\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"active\",\"type\":\"bool\"},{\"internalType\":\"bool\",\"name\":\"completed\",\"type\":\"bool\"},{\"internalType\":\"bool\",\"name\":\"paused\",\"type\":\"bool\"},{\"internalType\":\"uint256\",\"name\":\"pausedAt\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"pausedDuration\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_leaseId\",\"type\":\"uint256\"}],\"name\":\"pauseLease\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"platformFeePercentage\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"renounceOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_leaseId\",\"type\":\"uint256\"}],\"name\":\"resumeLease\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_feePercentage\",\"type\":\"uint256\"}],\"name\":\"setPlatformFee\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newTreasury\",\"type\":\"address\"}],\"name\":\"setTreasury\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_duration\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_storagePricePerSecond\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_computePricePerSecond\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"_provider\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_user\",\"type\":\"address\"}],\"name\":\"startLease\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"leaseId\",\"type\":\"uint256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"treasury\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"userActiveLeases\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"}],\"name\":\"userBalance\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"withdraw\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}]",
 }
 
-// GpuleaseABI is the input ABI used to generate the binding from.
-// Deprecated: Use GpuleaseMetaData.ABI instead.
-var GpuleaseABI = GpuleaseMetaData.ABI
+// GPULeaseABI is the input ABI used to generate the binding from.
+// Deprecated: Use GPULeaseMetaData.ABI instead.
+var GPULeaseABI = GPULeaseMetaData.ABI
 
-// Gpulease is an auto generated Go binding around an Ethereum contract.
-type Gpulease struct {
-	GpuleaseCaller     // Read-only binding to the contract
-	GpuleaseTransactor // Write-only binding to the contract
-	GpuleaseFilterer   // Log filterer for contract events
+// GPULease is an auto generated Go binding around an Ethereum contract.
+type GPULease struct {
+	GPULeaseCaller     // Read-only binding to the contract
+	GPULeaseTransactor // Write-only binding to the contract
+	GPULeaseFilterer   // Log filterer for contract events
 }
 
-// GpuleaseCaller is an auto generated read-only Go binding around an Ethereum contract.
-type GpuleaseCaller struct {
+// GPULeaseCaller is an auto generated read-only Go binding around an Ethereum contract.
+type GPULeaseCaller struct {
 	contract *bind.BoundContract // Generic contract wrapper for the low level calls
 }
 
-// GpuleaseTransactor is an auto generated write-only Go binding around an Ethereum contract.
-type GpuleaseTransactor struct {
+// GPULeaseTransactor is an auto generated write-only Go binding around an Ethereum contract.
+type GPULeaseTransactor struct {
 	contract *bind.BoundContract // Generic contract wrapper for the low level calls
 }
 
-// GpuleaseFilterer is an auto generated log filtering Go binding around an Ethereum contract events.
-type GpuleaseFilterer struct {
+// GPULeaseFilterer is an auto generated log filtering Go binding around an Ethereum contract events.
+type GPULeaseFilterer struct {
 	contract *bind.BoundContract // Generic contract wrapper for the low level calls
 }
 
-// GpuleaseSession is an auto generated Go binding around an Ethereum contract,
+// GPULeaseSession is an auto generated Go binding around an Ethereum contract,
 // with pre-set call and transact options.
-type GpuleaseSession struct {
-	Contract     *Gpulease         // Generic contract binding to set the session for
+type GPULeaseSession struct {
+	Contract     *GPULease         // Generic contract binding to set the session for
 	CallOpts     bind.CallOpts     // Call options to use throughout this session
 	TransactOpts bind.TransactOpts // Transaction auth options to use throughout this session
 }
 
-// GpuleaseCallerSession is an auto generated read-only Go binding around an Ethereum contract,
+// GPULeaseCallerSession is an auto generated read-only Go binding around an Ethereum contract,
 // with pre-set call options.
-type GpuleaseCallerSession struct {
-	Contract *GpuleaseCaller // Generic contract caller binding to set the session for
+type GPULeaseCallerSession struct {
+	Contract *GPULeaseCaller // Generic contract caller binding to set the session for
 	CallOpts bind.CallOpts   // Call options to use throughout this session
 }
 
-// GpuleaseTransactorSession is an auto generated write-only Go binding around an Ethereum contract,
+// GPULeaseTransactorSession is an auto generated write-only Go binding around an Ethereum contract,
 // with pre-set transact options.
-type GpuleaseTransactorSession struct {
-	Contract     *GpuleaseTransactor // Generic contract transactor binding to set the session for
+type GPULeaseTransactorSession struct {
+	Contract     *GPULeaseTransactor // Generic contract transactor binding to set the session for
 	TransactOpts bind.TransactOpts   // Transaction auth options to use throughout this session
 }
 
-// GpuleaseRaw is an auto generated low-level Go binding around an Ethereum contract.
-type GpuleaseRaw struct {
-	Contract *Gpulease // Generic contract binding to access the raw methods on
+// GPULeaseRaw is an auto generated low-level Go binding around an Ethereum contract.
+type GPULeaseRaw struct {
+	Contract *GPULease // Generic contract binding to access the raw methods on
 }
 
-// GpuleaseCallerRaw is an auto generated low-level read-only Go binding around an Ethereum contract.
-type GpuleaseCallerRaw struct {
-	Contract *GpuleaseCaller // Generic read-only contract binding to access the raw methods on
+// GPULeaseCallerRaw is an auto generated low-level read-only Go binding around an Ethereum contract.
+type GPULeaseCallerRaw struct {
+	Contract *GPULeaseCaller // Generic read-only contract binding to access the raw methods on
 }
 
-// GpuleaseTransactorRaw is an auto generated low-level write-only Go binding around an Ethereum contract.
-type GpuleaseTransactorRaw struct {
-	Contract *GpuleaseTransactor // Generic write-only contract binding to access the raw methods on
+// GPULeaseTransactorRaw is an auto generated low-level write-only Go binding around an Ethereum contract.
+type GPULeaseTransactorRaw struct {
+	Contract *GPULeaseTransactor // Generic write-only contract binding to access the raw methods on
 }
 
-// NewGpulease creates a new instance of Gpulease, bound to a specific deployed contract.
-func NewGpulease(address common.Address, backend bind.ContractBackend) (*Gpulease, error) {
-	contract, err := bindGpulease(address, backend, backend, backend)
+// NewGPULease creates a new instance of GPULease, bound to a specific deployed contract.
+func NewGPULease(address common.Address, backend bind.ContractBackend) (*GPULease, error) {
+	contract, err := bindGPULease(address, backend, backend, backend)
 	if err != nil {
 		return nil, err
 	}
-	return &Gpulease{GpuleaseCaller: GpuleaseCaller{contract: contract}, GpuleaseTransactor: GpuleaseTransactor{contract: contract}, GpuleaseFilterer: GpuleaseFilterer{contract: contract}}, nil
+	return &GPULease{GPULeaseCaller: GPULeaseCaller{contract: contract}, GPULeaseTransactor: GPULeaseTransactor{contract: contract}, GPULeaseFilterer: GPULeaseFilterer{contract: contract}}, nil
 }
 
-// NewGpuleaseCaller creates a new read-only instance of Gpulease, bound to a specific deployed contract.
-func NewGpuleaseCaller(address common.Address, caller bind.ContractCaller) (*GpuleaseCaller, error) {
-	contract, err := bindGpulease(address, caller, nil, nil)
+// NewGPULeaseCaller creates a new read-only instance of GPULease, bound to a specific deployed contract.
+func NewGPULeaseCaller(address common.Address, caller bind.ContractCaller) (*GPULeaseCaller, error) {
+	contract, err := bindGPULease(address, caller, nil, nil)
 	if err != nil {
 		return nil, err
 	}
-	return &GpuleaseCaller{contract: contract}, nil
+	return &GPULeaseCaller{contract: contract}, nil
 }
 
-// NewGpuleaseTransactor creates a new write-only instance of Gpulease, bound to a specific deployed contract.
-func NewGpuleaseTransactor(address common.Address, transactor bind.ContractTransactor) (*GpuleaseTransactor, error) {
-	contract, err := bindGpulease(address, nil, transactor, nil)
+// NewGPULeaseTransactor creates a new write-only instance of GPULease, bound to a specific deployed contract.
+func NewGPULeaseTransactor(address common.Address, transactor bind.ContractTransactor) (*GPULeaseTransactor, error) {
+	contract, err := bindGPULease(address, nil, transactor, nil)
 	if err != nil {
 		return nil, err
 	}
-	return &GpuleaseTransactor{contract: contract}, nil
+	return &GPULeaseTransactor{contract: contract}, nil
 }
 
-// NewGpuleaseFilterer creates a new log filterer instance of Gpulease, bound to a specific deployed contract.
-func NewGpuleaseFilterer(address common.Address, filterer bind.ContractFilterer) (*GpuleaseFilterer, error) {
-	contract, err := bindGpulease(address, nil, nil, filterer)
+// NewGPULeaseFilterer creates a new log filterer instance of GPULease, bound to a specific deployed contract.
+func NewGPULeaseFilterer(address common.Address, filterer bind.ContractFilterer) (*GPULeaseFilterer, error) {
+	contract, err := bindGPULease(address, nil, nil, filterer)
 	if err != nil {
 		return nil, err
 	}
-	return &GpuleaseFilterer{contract: contract}, nil
+	return &GPULeaseFilterer{contract: contract}, nil
 }
 
-// bindGpulease binds a generic wrapper to an already deployed contract.
-func bindGpulease(address common.Address, caller bind.ContractCaller, transactor bind.ContractTransactor, filterer bind.ContractFilterer) (*bind.BoundContract, error) {
-	parsed, err := GpuleaseMetaData.GetAbi()
+// bindGPULease binds a generic wrapper to an already deployed contract.
+func bindGPULease(address common.Address, caller bind.ContractCaller, transactor bind.ContractTransactor, filterer bind.ContractFilterer) (*bind.BoundContract, error) {
+	parsed, err := GPULeaseMetaData.GetAbi()
 	if err != nil {
 		return nil, err
 	}
@@ -152,46 +152,46 @@ func bindGpulease(address common.Address, caller bind.ContractCaller, transactor
 // sets the output to result. The result type might be a single field for simple
 // returns, a slice of interfaces for anonymous returns and a struct for named
 // returns.
-func (_Gpulease *GpuleaseRaw) Call(opts *bind.CallOpts, result *[]interface{}, method string, params ...interface{}) error {
-	return _Gpulease.Contract.GpuleaseCaller.contract.Call(opts, result, method, params...)
+func (_GPULease *GPULeaseRaw) Call(opts *bind.CallOpts, result *[]interface{}, method string, params ...interface{}) error {
+	return _GPULease.Contract.GPULeaseCaller.contract.Call(opts, result, method, params...)
 }
 
 // Transfer initiates a plain transaction to move funds to the contract, calling
 // its default method if one is available.
-func (_Gpulease *GpuleaseRaw) Transfer(opts *bind.TransactOpts) (*types.Transaction, error) {
-	return _Gpulease.Contract.GpuleaseTransactor.contract.Transfer(opts)
+func (_GPULease *GPULeaseRaw) Transfer(opts *bind.TransactOpts) (*types.Transaction, error) {
+	return _GPULease.Contract.GPULeaseTransactor.contract.Transfer(opts)
 }
 
 // Transact invokes the (paid) contract method with params as input values.
-func (_Gpulease *GpuleaseRaw) Transact(opts *bind.TransactOpts, method string, params ...interface{}) (*types.Transaction, error) {
-	return _Gpulease.Contract.GpuleaseTransactor.contract.Transact(opts, method, params...)
+func (_GPULease *GPULeaseRaw) Transact(opts *bind.TransactOpts, method string, params ...interface{}) (*types.Transaction, error) {
+	return _GPULease.Contract.GPULeaseTransactor.contract.Transact(opts, method, params...)
 }
 
 // Call invokes the (constant) contract method with params as input values and
 // sets the output to result. The result type might be a single field for simple
 // returns, a slice of interfaces for anonymous returns and a struct for named
 // returns.
-func (_Gpulease *GpuleaseCallerRaw) Call(opts *bind.CallOpts, result *[]interface{}, method string, params ...interface{}) error {
-	return _Gpulease.Contract.contract.Call(opts, result, method, params...)
+func (_GPULease *GPULeaseCallerRaw) Call(opts *bind.CallOpts, result *[]interface{}, method string, params ...interface{}) error {
+	return _GPULease.Contract.contract.Call(opts, result, method, params...)
 }
 
 // Transfer initiates a plain transaction to move funds to the contract, calling
 // its default method if one is available.
-func (_Gpulease *GpuleaseTransactorRaw) Transfer(opts *bind.TransactOpts) (*types.Transaction, error) {
-	return _Gpulease.Contract.contract.Transfer(opts)
+func (_GPULease *GPULeaseTransactorRaw) Transfer(opts *bind.TransactOpts) (*types.Transaction, error) {
+	return _GPULease.Contract.contract.Transfer(opts)
 }
 
 // Transact invokes the (paid) contract method with params as input values.
-func (_Gpulease *GpuleaseTransactorRaw) Transact(opts *bind.TransactOpts, method string, params ...interface{}) (*types.Transaction, error) {
-	return _Gpulease.Contract.contract.Transact(opts, method, params...)
+func (_GPULease *GPULeaseTransactorRaw) Transact(opts *bind.TransactOpts, method string, params ...interface{}) (*types.Transaction, error) {
+	return _GPULease.Contract.contract.Transact(opts, method, params...)
 }
 
 // Balances is a free data retrieval call binding the contract method 0x27e235e3.
 //
 // Solidity: function balances(address ) view returns(uint256)
-func (_Gpulease *GpuleaseCaller) Balances(opts *bind.CallOpts, arg0 common.Address) (*big.Int, error) {
+func (_GPULease *GPULeaseCaller) Balances(opts *bind.CallOpts, arg0 common.Address) (*big.Int, error) {
 	var out []interface{}
-	err := _Gpulease.contract.Call(opts, &out, "balances", arg0)
+	err := _GPULease.contract.Call(opts, &out, "balances", arg0)
 
 	if err != nil {
 		return *new(*big.Int), err
@@ -206,23 +206,23 @@ func (_Gpulease *GpuleaseCaller) Balances(opts *bind.CallOpts, arg0 common.Addre
 // Balances is a free data retrieval call binding the contract method 0x27e235e3.
 //
 // Solidity: function balances(address ) view returns(uint256)
-func (_Gpulease *GpuleaseSession) Balances(arg0 common.Address) (*big.Int, error) {
-	return _Gpulease.Contract.Balances(&_Gpulease.CallOpts, arg0)
+func (_GPULease *GPULeaseSession) Balances(arg0 common.Address) (*big.Int, error) {
+	return _GPULease.Contract.Balances(&_GPULease.CallOpts, arg0)
 }
 
 // Balances is a free data retrieval call binding the contract method 0x27e235e3.
 //
 // Solidity: function balances(address ) view returns(uint256)
-func (_Gpulease *GpuleaseCallerSession) Balances(arg0 common.Address) (*big.Int, error) {
-	return _Gpulease.Contract.Balances(&_Gpulease.CallOpts, arg0)
+func (_GPULease *GPULeaseCallerSession) Balances(arg0 common.Address) (*big.Int, error) {
+	return _GPULease.Contract.Balances(&_GPULease.CallOpts, arg0)
 }
 
 // Credit is a free data retrieval call binding the contract method 0xa06d083c.
 //
 // Solidity: function credit() view returns(address)
-func (_Gpulease *GpuleaseCaller) Credit(opts *bind.CallOpts) (common.Address, error) {
+func (_GPULease *GPULeaseCaller) Credit(opts *bind.CallOpts) (common.Address, error) {
 	var out []interface{}
-	err := _Gpulease.contract.Call(opts, &out, "credit")
+	err := _GPULease.contract.Call(opts, &out, "credit")
 
 	if err != nil {
 		return *new(common.Address), err
@@ -237,23 +237,23 @@ func (_Gpulease *GpuleaseCaller) Credit(opts *bind.CallOpts) (common.Address, er
 // Credit is a free data retrieval call binding the contract method 0xa06d083c.
 //
 // Solidity: function credit() view returns(address)
-func (_Gpulease *GpuleaseSession) Credit() (common.Address, error) {
-	return _Gpulease.Contract.Credit(&_Gpulease.CallOpts)
+func (_GPULease *GPULeaseSession) Credit() (common.Address, error) {
+	return _GPULease.Contract.Credit(&_GPULease.CallOpts)
 }
 
 // Credit is a free data retrieval call binding the contract method 0xa06d083c.
 //
 // Solidity: function credit() view returns(address)
-func (_Gpulease *GpuleaseCallerSession) Credit() (common.Address, error) {
-	return _Gpulease.Contract.Credit(&_Gpulease.CallOpts)
+func (_GPULease *GPULeaseCallerSession) Credit() (common.Address, error) {
+	return _GPULease.Contract.Credit(&_GPULease.CallOpts)
 }
 
 // FrozenFunds is a free data retrieval call binding the contract method 0xa641992a.
 //
 // Solidity: function frozenFunds(uint256 ) view returns(uint256)
-func (_Gpulease *GpuleaseCaller) FrozenFunds(opts *bind.CallOpts, arg0 *big.Int) (*big.Int, error) {
+func (_GPULease *GPULeaseCaller) FrozenFunds(opts *bind.CallOpts, arg0 *big.Int) (*big.Int, error) {
 	var out []interface{}
-	err := _Gpulease.contract.Call(opts, &out, "frozenFunds", arg0)
+	err := _GPULease.contract.Call(opts, &out, "frozenFunds", arg0)
 
 	if err != nil {
 		return *new(*big.Int), err
@@ -268,23 +268,23 @@ func (_Gpulease *GpuleaseCaller) FrozenFunds(opts *bind.CallOpts, arg0 *big.Int)
 // FrozenFunds is a free data retrieval call binding the contract method 0xa641992a.
 //
 // Solidity: function frozenFunds(uint256 ) view returns(uint256)
-func (_Gpulease *GpuleaseSession) FrozenFunds(arg0 *big.Int) (*big.Int, error) {
-	return _Gpulease.Contract.FrozenFunds(&_Gpulease.CallOpts, arg0)
+func (_GPULease *GPULeaseSession) FrozenFunds(arg0 *big.Int) (*big.Int, error) {
+	return _GPULease.Contract.FrozenFunds(&_GPULease.CallOpts, arg0)
 }
 
 // FrozenFunds is a free data retrieval call binding the contract method 0xa641992a.
 //
 // Solidity: function frozenFunds(uint256 ) view returns(uint256)
-func (_Gpulease *GpuleaseCallerSession) FrozenFunds(arg0 *big.Int) (*big.Int, error) {
-	return _Gpulease.Contract.FrozenFunds(&_Gpulease.CallOpts, arg0)
+func (_GPULease *GPULeaseCallerSession) FrozenFunds(arg0 *big.Int) (*big.Int, error) {
+	return _GPULease.Contract.FrozenFunds(&_GPULease.CallOpts, arg0)
 }
 
 // GetUserFrozenFunds is a free data retrieval call binding the contract method 0x97c4d284.
 //
 // Solidity: function getUserFrozenFunds(address user) view returns((uint256,uint256)[] result)
-func (_Gpulease *GpuleaseCaller) GetUserFrozenFunds(opts *bind.CallOpts, user common.Address) ([]GPULeaseFrozenFundsInfo, error) {
+func (_GPULease *GPULeaseCaller) GetUserFrozenFunds(opts *bind.CallOpts, user common.Address) ([]GPULeaseFrozenFundsInfo, error) {
 	var out []interface{}
-	err := _Gpulease.contract.Call(opts, &out, "getUserFrozenFunds", user)
+	err := _GPULease.contract.Call(opts, &out, "getUserFrozenFunds", user)
 
 	if err != nil {
 		return *new([]GPULeaseFrozenFundsInfo), err
@@ -299,23 +299,23 @@ func (_Gpulease *GpuleaseCaller) GetUserFrozenFunds(opts *bind.CallOpts, user co
 // GetUserFrozenFunds is a free data retrieval call binding the contract method 0x97c4d284.
 //
 // Solidity: function getUserFrozenFunds(address user) view returns((uint256,uint256)[] result)
-func (_Gpulease *GpuleaseSession) GetUserFrozenFunds(user common.Address) ([]GPULeaseFrozenFundsInfo, error) {
-	return _Gpulease.Contract.GetUserFrozenFunds(&_Gpulease.CallOpts, user)
+func (_GPULease *GPULeaseSession) GetUserFrozenFunds(user common.Address) ([]GPULeaseFrozenFundsInfo, error) {
+	return _GPULease.Contract.GetUserFrozenFunds(&_GPULease.CallOpts, user)
 }
 
 // GetUserFrozenFunds is a free data retrieval call binding the contract method 0x97c4d284.
 //
 // Solidity: function getUserFrozenFunds(address user) view returns((uint256,uint256)[] result)
-func (_Gpulease *GpuleaseCallerSession) GetUserFrozenFunds(user common.Address) ([]GPULeaseFrozenFundsInfo, error) {
-	return _Gpulease.Contract.GetUserFrozenFunds(&_Gpulease.CallOpts, user)
+func (_GPULease *GPULeaseCallerSession) GetUserFrozenFunds(user common.Address) ([]GPULeaseFrozenFundsInfo, error) {
+	return _GPULease.Contract.GetUserFrozenFunds(&_GPULease.CallOpts, user)
 }
 
 // LeaseCount is a free data retrieval call binding the contract method 0xb4c0498b.
 //
 // Solidity: function leaseCount() view returns(uint256)
-func (_Gpulease *GpuleaseCaller) LeaseCount(opts *bind.CallOpts) (*big.Int, error) {
+func (_GPULease *GPULeaseCaller) LeaseCount(opts *bind.CallOpts) (*big.Int, error) {
 	var out []interface{}
-	err := _Gpulease.contract.Call(opts, &out, "leaseCount")
+	err := _GPULease.contract.Call(opts, &out, "leaseCount")
 
 	if err != nil {
 		return *new(*big.Int), err
@@ -330,21 +330,21 @@ func (_Gpulease *GpuleaseCaller) LeaseCount(opts *bind.CallOpts) (*big.Int, erro
 // LeaseCount is a free data retrieval call binding the contract method 0xb4c0498b.
 //
 // Solidity: function leaseCount() view returns(uint256)
-func (_Gpulease *GpuleaseSession) LeaseCount() (*big.Int, error) {
-	return _Gpulease.Contract.LeaseCount(&_Gpulease.CallOpts)
+func (_GPULease *GPULeaseSession) LeaseCount() (*big.Int, error) {
+	return _GPULease.Contract.LeaseCount(&_GPULease.CallOpts)
 }
 
 // LeaseCount is a free data retrieval call binding the contract method 0xb4c0498b.
 //
 // Solidity: function leaseCount() view returns(uint256)
-func (_Gpulease *GpuleaseCallerSession) LeaseCount() (*big.Int, error) {
-	return _Gpulease.Contract.LeaseCount(&_Gpulease.CallOpts)
+func (_GPULease *GPULeaseCallerSession) LeaseCount() (*big.Int, error) {
+	return _GPULease.Contract.LeaseCount(&_GPULease.CallOpts)
 }
 
 // Leases is a free data retrieval call binding the contract method 0x8927a106.
 //
 // Solidity: function leases(uint256 ) view returns(address user, address provider, uint256 startTime, uint256 duration, uint256 storagePricePerSecond, uint256 computePricePerSecond, bool active, bool completed, bool paused, uint256 pausedAt, uint256 pausedDuration)
-func (_Gpulease *GpuleaseCaller) Leases(opts *bind.CallOpts, arg0 *big.Int) (struct {
+func (_GPULease *GPULeaseCaller) Leases(opts *bind.CallOpts, arg0 *big.Int) (struct {
 	User                  common.Address
 	Provider              common.Address
 	StartTime             *big.Int
@@ -358,7 +358,7 @@ func (_Gpulease *GpuleaseCaller) Leases(opts *bind.CallOpts, arg0 *big.Int) (str
 	PausedDuration        *big.Int
 }, error) {
 	var out []interface{}
-	err := _Gpulease.contract.Call(opts, &out, "leases", arg0)
+	err := _GPULease.contract.Call(opts, &out, "leases", arg0)
 
 	outstruct := new(struct {
 		User                  common.Address
@@ -396,7 +396,7 @@ func (_Gpulease *GpuleaseCaller) Leases(opts *bind.CallOpts, arg0 *big.Int) (str
 // Leases is a free data retrieval call binding the contract method 0x8927a106.
 //
 // Solidity: function leases(uint256 ) view returns(address user, address provider, uint256 startTime, uint256 duration, uint256 storagePricePerSecond, uint256 computePricePerSecond, bool active, bool completed, bool paused, uint256 pausedAt, uint256 pausedDuration)
-func (_Gpulease *GpuleaseSession) Leases(arg0 *big.Int) (struct {
+func (_GPULease *GPULeaseSession) Leases(arg0 *big.Int) (struct {
 	User                  common.Address
 	Provider              common.Address
 	StartTime             *big.Int
@@ -409,13 +409,13 @@ func (_Gpulease *GpuleaseSession) Leases(arg0 *big.Int) (struct {
 	PausedAt              *big.Int
 	PausedDuration        *big.Int
 }, error) {
-	return _Gpulease.Contract.Leases(&_Gpulease.CallOpts, arg0)
+	return _GPULease.Contract.Leases(&_GPULease.CallOpts, arg0)
 }
 
 // Leases is a free data retrieval call binding the contract method 0x8927a106.
 //
 // Solidity: function leases(uint256 ) view returns(address user, address provider, uint256 startTime, uint256 duration, uint256 storagePricePerSecond, uint256 computePricePerSecond, bool active, bool completed, bool paused, uint256 pausedAt, uint256 pausedDuration)
-func (_Gpulease *GpuleaseCallerSession) Leases(arg0 *big.Int) (struct {
+func (_GPULease *GPULeaseCallerSession) Leases(arg0 *big.Int) (struct {
 	User                  common.Address
 	Provider              common.Address
 	StartTime             *big.Int
@@ -428,15 +428,15 @@ func (_Gpulease *GpuleaseCallerSession) Leases(arg0 *big.Int) (struct {
 	PausedAt              *big.Int
 	PausedDuration        *big.Int
 }, error) {
-	return _Gpulease.Contract.Leases(&_Gpulease.CallOpts, arg0)
+	return _GPULease.Contract.Leases(&_GPULease.CallOpts, arg0)
 }
 
 // Owner is a free data retrieval call binding the contract method 0x8da5cb5b.
 //
 // Solidity: function owner() view returns(address)
-func (_Gpulease *GpuleaseCaller) Owner(opts *bind.CallOpts) (common.Address, error) {
+func (_GPULease *GPULeaseCaller) Owner(opts *bind.CallOpts) (common.Address, error) {
 	var out []interface{}
-	err := _Gpulease.contract.Call(opts, &out, "owner")
+	err := _GPULease.contract.Call(opts, &out, "owner")
 
 	if err != nil {
 		return *new(common.Address), err
@@ -451,23 +451,23 @@ func (_Gpulease *GpuleaseCaller) Owner(opts *bind.CallOpts) (common.Address, err
 // Owner is a free data retrieval call binding the contract method 0x8da5cb5b.
 //
 // Solidity: function owner() view returns(address)
-func (_Gpulease *GpuleaseSession) Owner() (common.Address, error) {
-	return _Gpulease.Contract.Owner(&_Gpulease.CallOpts)
+func (_GPULease *GPULeaseSession) Owner() (common.Address, error) {
+	return _GPULease.Contract.Owner(&_GPULease.CallOpts)
 }
 
 // Owner is a free data retrieval call binding the contract method 0x8da5cb5b.
 //
 // Solidity: function owner() view returns(address)
-func (_Gpulease *GpuleaseCallerSession) Owner() (common.Address, error) {
-	return _Gpulease.Contract.Owner(&_Gpulease.CallOpts)
+func (_GPULease *GPULeaseCallerSession) Owner() (common.Address, error) {
+	return _GPULease.Contract.Owner(&_GPULease.CallOpts)
 }
 
 // PlatformFeePercentage is a free data retrieval call binding the contract method 0xcdd78cfc.
 //
 // Solidity: function platformFeePercentage() view returns(uint256)
-func (_Gpulease *GpuleaseCaller) PlatformFeePercentage(opts *bind.CallOpts) (*big.Int, error) {
+func (_GPULease *GPULeaseCaller) PlatformFeePercentage(opts *bind.CallOpts) (*big.Int, error) {
 	var out []interface{}
-	err := _Gpulease.contract.Call(opts, &out, "platformFeePercentage")
+	err := _GPULease.contract.Call(opts, &out, "platformFeePercentage")
 
 	if err != nil {
 		return *new(*big.Int), err
@@ -482,23 +482,23 @@ func (_Gpulease *GpuleaseCaller) PlatformFeePercentage(opts *bind.CallOpts) (*bi
 // PlatformFeePercentage is a free data retrieval call binding the contract method 0xcdd78cfc.
 //
 // Solidity: function platformFeePercentage() view returns(uint256)
-func (_Gpulease *GpuleaseSession) PlatformFeePercentage() (*big.Int, error) {
-	return _Gpulease.Contract.PlatformFeePercentage(&_Gpulease.CallOpts)
+func (_GPULease *GPULeaseSession) PlatformFeePercentage() (*big.Int, error) {
+	return _GPULease.Contract.PlatformFeePercentage(&_GPULease.CallOpts)
 }
 
 // PlatformFeePercentage is a free data retrieval call binding the contract method 0xcdd78cfc.
 //
 // Solidity: function platformFeePercentage() view returns(uint256)
-func (_Gpulease *GpuleaseCallerSession) PlatformFeePercentage() (*big.Int, error) {
-	return _Gpulease.Contract.PlatformFeePercentage(&_Gpulease.CallOpts)
+func (_GPULease *GPULeaseCallerSession) PlatformFeePercentage() (*big.Int, error) {
+	return _GPULease.Contract.PlatformFeePercentage(&_GPULease.CallOpts)
 }
 
 // Treasury is a free data retrieval call binding the contract method 0x61d027b3.
 //
 // Solidity: function treasury() view returns(address)
-func (_Gpulease *GpuleaseCaller) Treasury(opts *bind.CallOpts) (common.Address, error) {
+func (_GPULease *GPULeaseCaller) Treasury(opts *bind.CallOpts) (common.Address, error) {
 	var out []interface{}
-	err := _Gpulease.contract.Call(opts, &out, "treasury")
+	err := _GPULease.contract.Call(opts, &out, "treasury")
 
 	if err != nil {
 		return *new(common.Address), err
@@ -513,23 +513,23 @@ func (_Gpulease *GpuleaseCaller) Treasury(opts *bind.CallOpts) (common.Address, 
 // Treasury is a free data retrieval call binding the contract method 0x61d027b3.
 //
 // Solidity: function treasury() view returns(address)
-func (_Gpulease *GpuleaseSession) Treasury() (common.Address, error) {
-	return _Gpulease.Contract.Treasury(&_Gpulease.CallOpts)
+func (_GPULease *GPULeaseSession) Treasury() (common.Address, error) {
+	return _GPULease.Contract.Treasury(&_GPULease.CallOpts)
 }
 
 // Treasury is a free data retrieval call binding the contract method 0x61d027b3.
 //
 // Solidity: function treasury() view returns(address)
-func (_Gpulease *GpuleaseCallerSession) Treasury() (common.Address, error) {
-	return _Gpulease.Contract.Treasury(&_Gpulease.CallOpts)
+func (_GPULease *GPULeaseCallerSession) Treasury() (common.Address, error) {
+	return _GPULease.Contract.Treasury(&_GPULease.CallOpts)
 }
 
 // UserActiveLeases is a free data retrieval call binding the contract method 0xe869a060.
 //
 // Solidity: function userActiveLeases(address , uint256 ) view returns(uint256)
-func (_Gpulease *GpuleaseCaller) UserActiveLeases(opts *bind.CallOpts, arg0 common.Address, arg1 *big.Int) (*big.Int, error) {
+func (_GPULease *GPULeaseCaller) UserActiveLeases(opts *bind.CallOpts, arg0 common.Address, arg1 *big.Int) (*big.Int, error) {
 	var out []interface{}
-	err := _Gpulease.contract.Call(opts, &out, "userActiveLeases", arg0, arg1)
+	err := _GPULease.contract.Call(opts, &out, "userActiveLeases", arg0, arg1)
 
 	if err != nil {
 		return *new(*big.Int), err
@@ -544,23 +544,23 @@ func (_Gpulease *GpuleaseCaller) UserActiveLeases(opts *bind.CallOpts, arg0 comm
 // UserActiveLeases is a free data retrieval call binding the contract method 0xe869a060.
 //
 // Solidity: function userActiveLeases(address , uint256 ) view returns(uint256)
-func (_Gpulease *GpuleaseSession) UserActiveLeases(arg0 common.Address, arg1 *big.Int) (*big.Int, error) {
-	return _Gpulease.Contract.UserActiveLeases(&_Gpulease.CallOpts, arg0, arg1)
+func (_GPULease *GPULeaseSession) UserActiveLeases(arg0 common.Address, arg1 *big.Int) (*big.Int, error) {
+	return _GPULease.Contract.UserActiveLeases(&_GPULease.CallOpts, arg0, arg1)
 }
 
 // UserActiveLeases is a free data retrieval call binding the contract method 0xe869a060.
 //
 // Solidity: function userActiveLeases(address , uint256 ) view returns(uint256)
-func (_Gpulease *GpuleaseCallerSession) UserActiveLeases(arg0 common.Address, arg1 *big.Int) (*big.Int, error) {
-	return _Gpulease.Contract.UserActiveLeases(&_Gpulease.CallOpts, arg0, arg1)
+func (_GPULease *GPULeaseCallerSession) UserActiveLeases(arg0 common.Address, arg1 *big.Int) (*big.Int, error) {
+	return _GPULease.Contract.UserActiveLeases(&_GPULease.CallOpts, arg0, arg1)
 }
 
 // UserBalance is a free data retrieval call binding the contract method 0x0103c92b.
 //
 // Solidity: function userBalance(address user) view returns(uint256)
-func (_Gpulease *GpuleaseCaller) UserBalance(opts *bind.CallOpts, user common.Address) (*big.Int, error) {
+func (_GPULease *GPULeaseCaller) UserBalance(opts *bind.CallOpts, user common.Address) (*big.Int, error) {
 	var out []interface{}
-	err := _Gpulease.contract.Call(opts, &out, "userBalance", user)
+	err := _GPULease.contract.Call(opts, &out, "userBalance", user)
 
 	if err != nil {
 		return *new(*big.Int), err
@@ -575,230 +575,230 @@ func (_Gpulease *GpuleaseCaller) UserBalance(opts *bind.CallOpts, user common.Ad
 // UserBalance is a free data retrieval call binding the contract method 0x0103c92b.
 //
 // Solidity: function userBalance(address user) view returns(uint256)
-func (_Gpulease *GpuleaseSession) UserBalance(user common.Address) (*big.Int, error) {
-	return _Gpulease.Contract.UserBalance(&_Gpulease.CallOpts, user)
+func (_GPULease *GPULeaseSession) UserBalance(user common.Address) (*big.Int, error) {
+	return _GPULease.Contract.UserBalance(&_GPULease.CallOpts, user)
 }
 
 // UserBalance is a free data retrieval call binding the contract method 0x0103c92b.
 //
 // Solidity: function userBalance(address user) view returns(uint256)
-func (_Gpulease *GpuleaseCallerSession) UserBalance(user common.Address) (*big.Int, error) {
-	return _Gpulease.Contract.UserBalance(&_Gpulease.CallOpts, user)
+func (_GPULease *GPULeaseCallerSession) UserBalance(user common.Address) (*big.Int, error) {
+	return _GPULease.Contract.UserBalance(&_GPULease.CallOpts, user)
 }
 
 // CompleteLease is a paid mutator transaction binding the contract method 0x95e6e242.
 //
 // Solidity: function completeLease(uint256 _leaseId) returns()
-func (_Gpulease *GpuleaseTransactor) CompleteLease(opts *bind.TransactOpts, _leaseId *big.Int) (*types.Transaction, error) {
-	return _Gpulease.contract.Transact(opts, "completeLease", _leaseId)
+func (_GPULease *GPULeaseTransactor) CompleteLease(opts *bind.TransactOpts, _leaseId *big.Int) (*types.Transaction, error) {
+	return _GPULease.contract.Transact(opts, "completeLease", _leaseId)
 }
 
 // CompleteLease is a paid mutator transaction binding the contract method 0x95e6e242.
 //
 // Solidity: function completeLease(uint256 _leaseId) returns()
-func (_Gpulease *GpuleaseSession) CompleteLease(_leaseId *big.Int) (*types.Transaction, error) {
-	return _Gpulease.Contract.CompleteLease(&_Gpulease.TransactOpts, _leaseId)
+func (_GPULease *GPULeaseSession) CompleteLease(_leaseId *big.Int) (*types.Transaction, error) {
+	return _GPULease.Contract.CompleteLease(&_GPULease.TransactOpts, _leaseId)
 }
 
 // CompleteLease is a paid mutator transaction binding the contract method 0x95e6e242.
 //
 // Solidity: function completeLease(uint256 _leaseId) returns()
-func (_Gpulease *GpuleaseTransactorSession) CompleteLease(_leaseId *big.Int) (*types.Transaction, error) {
-	return _Gpulease.Contract.CompleteLease(&_Gpulease.TransactOpts, _leaseId)
+func (_GPULease *GPULeaseTransactorSession) CompleteLease(_leaseId *big.Int) (*types.Transaction, error) {
+	return _GPULease.Contract.CompleteLease(&_GPULease.TransactOpts, _leaseId)
 }
 
 // Deposit is a paid mutator transaction binding the contract method 0xb6b55f25.
 //
 // Solidity: function deposit(uint256 amount) returns()
-func (_Gpulease *GpuleaseTransactor) Deposit(opts *bind.TransactOpts, amount *big.Int) (*types.Transaction, error) {
-	return _Gpulease.contract.Transact(opts, "deposit", amount)
+func (_GPULease *GPULeaseTransactor) Deposit(opts *bind.TransactOpts, amount *big.Int) (*types.Transaction, error) {
+	return _GPULease.contract.Transact(opts, "deposit", amount)
 }
 
 // Deposit is a paid mutator transaction binding the contract method 0xb6b55f25.
 //
 // Solidity: function deposit(uint256 amount) returns()
-func (_Gpulease *GpuleaseSession) Deposit(amount *big.Int) (*types.Transaction, error) {
-	return _Gpulease.Contract.Deposit(&_Gpulease.TransactOpts, amount)
+func (_GPULease *GPULeaseSession) Deposit(amount *big.Int) (*types.Transaction, error) {
+	return _GPULease.Contract.Deposit(&_GPULease.TransactOpts, amount)
 }
 
 // Deposit is a paid mutator transaction binding the contract method 0xb6b55f25.
 //
 // Solidity: function deposit(uint256 amount) returns()
-func (_Gpulease *GpuleaseTransactorSession) Deposit(amount *big.Int) (*types.Transaction, error) {
-	return _Gpulease.Contract.Deposit(&_Gpulease.TransactOpts, amount)
+func (_GPULease *GPULeaseTransactorSession) Deposit(amount *big.Int) (*types.Transaction, error) {
+	return _GPULease.Contract.Deposit(&_GPULease.TransactOpts, amount)
 }
 
 // PauseLease is a paid mutator transaction binding the contract method 0xb8eeaa78.
 //
 // Solidity: function pauseLease(uint256 _leaseId) returns()
-func (_Gpulease *GpuleaseTransactor) PauseLease(opts *bind.TransactOpts, _leaseId *big.Int) (*types.Transaction, error) {
-	return _Gpulease.contract.Transact(opts, "pauseLease", _leaseId)
+func (_GPULease *GPULeaseTransactor) PauseLease(opts *bind.TransactOpts, _leaseId *big.Int) (*types.Transaction, error) {
+	return _GPULease.contract.Transact(opts, "pauseLease", _leaseId)
 }
 
 // PauseLease is a paid mutator transaction binding the contract method 0xb8eeaa78.
 //
 // Solidity: function pauseLease(uint256 _leaseId) returns()
-func (_Gpulease *GpuleaseSession) PauseLease(_leaseId *big.Int) (*types.Transaction, error) {
-	return _Gpulease.Contract.PauseLease(&_Gpulease.TransactOpts, _leaseId)
+func (_GPULease *GPULeaseSession) PauseLease(_leaseId *big.Int) (*types.Transaction, error) {
+	return _GPULease.Contract.PauseLease(&_GPULease.TransactOpts, _leaseId)
 }
 
 // PauseLease is a paid mutator transaction binding the contract method 0xb8eeaa78.
 //
 // Solidity: function pauseLease(uint256 _leaseId) returns()
-func (_Gpulease *GpuleaseTransactorSession) PauseLease(_leaseId *big.Int) (*types.Transaction, error) {
-	return _Gpulease.Contract.PauseLease(&_Gpulease.TransactOpts, _leaseId)
+func (_GPULease *GPULeaseTransactorSession) PauseLease(_leaseId *big.Int) (*types.Transaction, error) {
+	return _GPULease.Contract.PauseLease(&_GPULease.TransactOpts, _leaseId)
 }
 
 // RenounceOwnership is a paid mutator transaction binding the contract method 0x715018a6.
 //
 // Solidity: function renounceOwnership() returns()
-func (_Gpulease *GpuleaseTransactor) RenounceOwnership(opts *bind.TransactOpts) (*types.Transaction, error) {
-	return _Gpulease.contract.Transact(opts, "renounceOwnership")
+func (_GPULease *GPULeaseTransactor) RenounceOwnership(opts *bind.TransactOpts) (*types.Transaction, error) {
+	return _GPULease.contract.Transact(opts, "renounceOwnership")
 }
 
 // RenounceOwnership is a paid mutator transaction binding the contract method 0x715018a6.
 //
 // Solidity: function renounceOwnership() returns()
-func (_Gpulease *GpuleaseSession) RenounceOwnership() (*types.Transaction, error) {
-	return _Gpulease.Contract.RenounceOwnership(&_Gpulease.TransactOpts)
+func (_GPULease *GPULeaseSession) RenounceOwnership() (*types.Transaction, error) {
+	return _GPULease.Contract.RenounceOwnership(&_GPULease.TransactOpts)
 }
 
 // RenounceOwnership is a paid mutator transaction binding the contract method 0x715018a6.
 //
 // Solidity: function renounceOwnership() returns()
-func (_Gpulease *GpuleaseTransactorSession) RenounceOwnership() (*types.Transaction, error) {
-	return _Gpulease.Contract.RenounceOwnership(&_Gpulease.TransactOpts)
+func (_GPULease *GPULeaseTransactorSession) RenounceOwnership() (*types.Transaction, error) {
+	return _GPULease.Contract.RenounceOwnership(&_GPULease.TransactOpts)
 }
 
 // ResumeLease is a paid mutator transaction binding the contract method 0x18ba11c9.
 //
 // Solidity: function resumeLease(uint256 _leaseId) returns()
-func (_Gpulease *GpuleaseTransactor) ResumeLease(opts *bind.TransactOpts, _leaseId *big.Int) (*types.Transaction, error) {
-	return _Gpulease.contract.Transact(opts, "resumeLease", _leaseId)
+func (_GPULease *GPULeaseTransactor) ResumeLease(opts *bind.TransactOpts, _leaseId *big.Int) (*types.Transaction, error) {
+	return _GPULease.contract.Transact(opts, "resumeLease", _leaseId)
 }
 
 // ResumeLease is a paid mutator transaction binding the contract method 0x18ba11c9.
 //
 // Solidity: function resumeLease(uint256 _leaseId) returns()
-func (_Gpulease *GpuleaseSession) ResumeLease(_leaseId *big.Int) (*types.Transaction, error) {
-	return _Gpulease.Contract.ResumeLease(&_Gpulease.TransactOpts, _leaseId)
+func (_GPULease *GPULeaseSession) ResumeLease(_leaseId *big.Int) (*types.Transaction, error) {
+	return _GPULease.Contract.ResumeLease(&_GPULease.TransactOpts, _leaseId)
 }
 
 // ResumeLease is a paid mutator transaction binding the contract method 0x18ba11c9.
 //
 // Solidity: function resumeLease(uint256 _leaseId) returns()
-func (_Gpulease *GpuleaseTransactorSession) ResumeLease(_leaseId *big.Int) (*types.Transaction, error) {
-	return _Gpulease.Contract.ResumeLease(&_Gpulease.TransactOpts, _leaseId)
+func (_GPULease *GPULeaseTransactorSession) ResumeLease(_leaseId *big.Int) (*types.Transaction, error) {
+	return _GPULease.Contract.ResumeLease(&_GPULease.TransactOpts, _leaseId)
 }
 
 // SetPlatformFee is a paid mutator transaction binding the contract method 0x12e8e2c3.
 //
 // Solidity: function setPlatformFee(uint256 _feePercentage) returns()
-func (_Gpulease *GpuleaseTransactor) SetPlatformFee(opts *bind.TransactOpts, _feePercentage *big.Int) (*types.Transaction, error) {
-	return _Gpulease.contract.Transact(opts, "setPlatformFee", _feePercentage)
+func (_GPULease *GPULeaseTransactor) SetPlatformFee(opts *bind.TransactOpts, _feePercentage *big.Int) (*types.Transaction, error) {
+	return _GPULease.contract.Transact(opts, "setPlatformFee", _feePercentage)
 }
 
 // SetPlatformFee is a paid mutator transaction binding the contract method 0x12e8e2c3.
 //
 // Solidity: function setPlatformFee(uint256 _feePercentage) returns()
-func (_Gpulease *GpuleaseSession) SetPlatformFee(_feePercentage *big.Int) (*types.Transaction, error) {
-	return _Gpulease.Contract.SetPlatformFee(&_Gpulease.TransactOpts, _feePercentage)
+func (_GPULease *GPULeaseSession) SetPlatformFee(_feePercentage *big.Int) (*types.Transaction, error) {
+	return _GPULease.Contract.SetPlatformFee(&_GPULease.TransactOpts, _feePercentage)
 }
 
 // SetPlatformFee is a paid mutator transaction binding the contract method 0x12e8e2c3.
 //
 // Solidity: function setPlatformFee(uint256 _feePercentage) returns()
-func (_Gpulease *GpuleaseTransactorSession) SetPlatformFee(_feePercentage *big.Int) (*types.Transaction, error) {
-	return _Gpulease.Contract.SetPlatformFee(&_Gpulease.TransactOpts, _feePercentage)
+func (_GPULease *GPULeaseTransactorSession) SetPlatformFee(_feePercentage *big.Int) (*types.Transaction, error) {
+	return _GPULease.Contract.SetPlatformFee(&_GPULease.TransactOpts, _feePercentage)
 }
 
 // SetTreasury is a paid mutator transaction binding the contract method 0xf0f44260.
 //
 // Solidity: function setTreasury(address newTreasury) returns()
-func (_Gpulease *GpuleaseTransactor) SetTreasury(opts *bind.TransactOpts, newTreasury common.Address) (*types.Transaction, error) {
-	return _Gpulease.contract.Transact(opts, "setTreasury", newTreasury)
+func (_GPULease *GPULeaseTransactor) SetTreasury(opts *bind.TransactOpts, newTreasury common.Address) (*types.Transaction, error) {
+	return _GPULease.contract.Transact(opts, "setTreasury", newTreasury)
 }
 
 // SetTreasury is a paid mutator transaction binding the contract method 0xf0f44260.
 //
 // Solidity: function setTreasury(address newTreasury) returns()
-func (_Gpulease *GpuleaseSession) SetTreasury(newTreasury common.Address) (*types.Transaction, error) {
-	return _Gpulease.Contract.SetTreasury(&_Gpulease.TransactOpts, newTreasury)
+func (_GPULease *GPULeaseSession) SetTreasury(newTreasury common.Address) (*types.Transaction, error) {
+	return _GPULease.Contract.SetTreasury(&_GPULease.TransactOpts, newTreasury)
 }
 
 // SetTreasury is a paid mutator transaction binding the contract method 0xf0f44260.
 //
 // Solidity: function setTreasury(address newTreasury) returns()
-func (_Gpulease *GpuleaseTransactorSession) SetTreasury(newTreasury common.Address) (*types.Transaction, error) {
-	return _Gpulease.Contract.SetTreasury(&_Gpulease.TransactOpts, newTreasury)
+func (_GPULease *GPULeaseTransactorSession) SetTreasury(newTreasury common.Address) (*types.Transaction, error) {
+	return _GPULease.Contract.SetTreasury(&_GPULease.TransactOpts, newTreasury)
 }
 
 // StartLease is a paid mutator transaction binding the contract method 0xf648da80.
 //
 // Solidity: function startLease(uint256 _duration, uint256 _storagePricePerSecond, uint256 _computePricePerSecond, address _provider, address _user) returns(uint256 leaseId)
-func (_Gpulease *GpuleaseTransactor) StartLease(opts *bind.TransactOpts, _duration *big.Int, _storagePricePerSecond *big.Int, _computePricePerSecond *big.Int, _provider common.Address, _user common.Address) (*types.Transaction, error) {
-	return _Gpulease.contract.Transact(opts, "startLease", _duration, _storagePricePerSecond, _computePricePerSecond, _provider, _user)
+func (_GPULease *GPULeaseTransactor) StartLease(opts *bind.TransactOpts, _duration *big.Int, _storagePricePerSecond *big.Int, _computePricePerSecond *big.Int, _provider common.Address, _user common.Address) (*types.Transaction, error) {
+	return _GPULease.contract.Transact(opts, "startLease", _duration, _storagePricePerSecond, _computePricePerSecond, _provider, _user)
 }
 
 // StartLease is a paid mutator transaction binding the contract method 0xf648da80.
 //
 // Solidity: function startLease(uint256 _duration, uint256 _storagePricePerSecond, uint256 _computePricePerSecond, address _provider, address _user) returns(uint256 leaseId)
-func (_Gpulease *GpuleaseSession) StartLease(_duration *big.Int, _storagePricePerSecond *big.Int, _computePricePerSecond *big.Int, _provider common.Address, _user common.Address) (*types.Transaction, error) {
-	return _Gpulease.Contract.StartLease(&_Gpulease.TransactOpts, _duration, _storagePricePerSecond, _computePricePerSecond, _provider, _user)
+func (_GPULease *GPULeaseSession) StartLease(_duration *big.Int, _storagePricePerSecond *big.Int, _computePricePerSecond *big.Int, _provider common.Address, _user common.Address) (*types.Transaction, error) {
+	return _GPULease.Contract.StartLease(&_GPULease.TransactOpts, _duration, _storagePricePerSecond, _computePricePerSecond, _provider, _user)
 }
 
 // StartLease is a paid mutator transaction binding the contract method 0xf648da80.
 //
 // Solidity: function startLease(uint256 _duration, uint256 _storagePricePerSecond, uint256 _computePricePerSecond, address _provider, address _user) returns(uint256 leaseId)
-func (_Gpulease *GpuleaseTransactorSession) StartLease(_duration *big.Int, _storagePricePerSecond *big.Int, _computePricePerSecond *big.Int, _provider common.Address, _user common.Address) (*types.Transaction, error) {
-	return _Gpulease.Contract.StartLease(&_Gpulease.TransactOpts, _duration, _storagePricePerSecond, _computePricePerSecond, _provider, _user)
+func (_GPULease *GPULeaseTransactorSession) StartLease(_duration *big.Int, _storagePricePerSecond *big.Int, _computePricePerSecond *big.Int, _provider common.Address, _user common.Address) (*types.Transaction, error) {
+	return _GPULease.Contract.StartLease(&_GPULease.TransactOpts, _duration, _storagePricePerSecond, _computePricePerSecond, _provider, _user)
 }
 
 // TransferOwnership is a paid mutator transaction binding the contract method 0xf2fde38b.
 //
 // Solidity: function transferOwnership(address newOwner) returns()
-func (_Gpulease *GpuleaseTransactor) TransferOwnership(opts *bind.TransactOpts, newOwner common.Address) (*types.Transaction, error) {
-	return _Gpulease.contract.Transact(opts, "transferOwnership", newOwner)
+func (_GPULease *GPULeaseTransactor) TransferOwnership(opts *bind.TransactOpts, newOwner common.Address) (*types.Transaction, error) {
+	return _GPULease.contract.Transact(opts, "transferOwnership", newOwner)
 }
 
 // TransferOwnership is a paid mutator transaction binding the contract method 0xf2fde38b.
 //
 // Solidity: function transferOwnership(address newOwner) returns()
-func (_Gpulease *GpuleaseSession) TransferOwnership(newOwner common.Address) (*types.Transaction, error) {
-	return _Gpulease.Contract.TransferOwnership(&_Gpulease.TransactOpts, newOwner)
+func (_GPULease *GPULeaseSession) TransferOwnership(newOwner common.Address) (*types.Transaction, error) {
+	return _GPULease.Contract.TransferOwnership(&_GPULease.TransactOpts, newOwner)
 }
 
 // TransferOwnership is a paid mutator transaction binding the contract method 0xf2fde38b.
 //
 // Solidity: function transferOwnership(address newOwner) returns()
-func (_Gpulease *GpuleaseTransactorSession) TransferOwnership(newOwner common.Address) (*types.Transaction, error) {
-	return _Gpulease.Contract.TransferOwnership(&_Gpulease.TransactOpts, newOwner)
+func (_GPULease *GPULeaseTransactorSession) TransferOwnership(newOwner common.Address) (*types.Transaction, error) {
+	return _GPULease.Contract.TransferOwnership(&_GPULease.TransactOpts, newOwner)
 }
 
 // Withdraw is a paid mutator transaction binding the contract method 0x2e1a7d4d.
 //
 // Solidity: function withdraw(uint256 amount) returns()
-func (_Gpulease *GpuleaseTransactor) Withdraw(opts *bind.TransactOpts, amount *big.Int) (*types.Transaction, error) {
-	return _Gpulease.contract.Transact(opts, "withdraw", amount)
+func (_GPULease *GPULeaseTransactor) Withdraw(opts *bind.TransactOpts, amount *big.Int) (*types.Transaction, error) {
+	return _GPULease.contract.Transact(opts, "withdraw", amount)
 }
 
 // Withdraw is a paid mutator transaction binding the contract method 0x2e1a7d4d.
 //
 // Solidity: function withdraw(uint256 amount) returns()
-func (_Gpulease *GpuleaseSession) Withdraw(amount *big.Int) (*types.Transaction, error) {
-	return _Gpulease.Contract.Withdraw(&_Gpulease.TransactOpts, amount)
+func (_GPULease *GPULeaseSession) Withdraw(amount *big.Int) (*types.Transaction, error) {
+	return _GPULease.Contract.Withdraw(&_GPULease.TransactOpts, amount)
 }
 
 // Withdraw is a paid mutator transaction binding the contract method 0x2e1a7d4d.
 //
 // Solidity: function withdraw(uint256 amount) returns()
-func (_Gpulease *GpuleaseTransactorSession) Withdraw(amount *big.Int) (*types.Transaction, error) {
-	return _Gpulease.Contract.Withdraw(&_Gpulease.TransactOpts, amount)
+func (_GPULease *GPULeaseTransactorSession) Withdraw(amount *big.Int) (*types.Transaction, error) {
+	return _GPULease.Contract.Withdraw(&_GPULease.TransactOpts, amount)
 }
 
-// GpuleaseDepositIterator is returned from FilterDeposit and is used to iterate over the raw logs and unpacked data for Deposit events raised by the Gpulease contract.
-type GpuleaseDepositIterator struct {
-	Event *GpuleaseDeposit // Event containing the contract specifics and raw log
+// GPULeaseDepositIterator is returned from FilterDeposit and is used to iterate over the raw logs and unpacked data for Deposit events raised by the GPULease contract.
+type GPULeaseDepositIterator struct {
+	Event *GPULeaseDeposit // Event containing the contract specifics and raw log
 
 	contract *bind.BoundContract // Generic contract to use for unpacking event data
 	event    string              // Event name to use for unpacking event data
@@ -812,7 +812,7 @@ type GpuleaseDepositIterator struct {
 // Next advances the iterator to the subsequent event, returning whether there
 // are any more events found. In case of a retrieval or parsing error, false is
 // returned and Error() can be queried for the exact failure.
-func (it *GpuleaseDepositIterator) Next() bool {
+func (it *GPULeaseDepositIterator) Next() bool {
 	// If the iterator failed, stop iterating
 	if it.fail != nil {
 		return false
@@ -821,7 +821,7 @@ func (it *GpuleaseDepositIterator) Next() bool {
 	if it.done {
 		select {
 		case log := <-it.logs:
-			it.Event = new(GpuleaseDeposit)
+			it.Event = new(GPULeaseDeposit)
 			if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
 				it.fail = err
 				return false
@@ -836,7 +836,7 @@ func (it *GpuleaseDepositIterator) Next() bool {
 	// Iterator still in progress, wait for either a data or an error event
 	select {
 	case log := <-it.logs:
-		it.Event = new(GpuleaseDeposit)
+		it.Event = new(GPULeaseDeposit)
 		if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
 			it.fail = err
 			return false
@@ -852,19 +852,19 @@ func (it *GpuleaseDepositIterator) Next() bool {
 }
 
 // Error returns any retrieval or parsing error occurred during filtering.
-func (it *GpuleaseDepositIterator) Error() error {
+func (it *GPULeaseDepositIterator) Error() error {
 	return it.fail
 }
 
 // Close terminates the iteration process, releasing any pending underlying
 // resources.
-func (it *GpuleaseDepositIterator) Close() error {
+func (it *GPULeaseDepositIterator) Close() error {
 	it.sub.Unsubscribe()
 	return nil
 }
 
-// GpuleaseDeposit represents a Deposit event raised by the Gpulease contract.
-type GpuleaseDeposit struct {
+// GPULeaseDeposit represents a Deposit event raised by the GPULease contract.
+type GPULeaseDeposit struct {
 	User   common.Address
 	Amount *big.Int
 	Raw    types.Log // Blockchain specific contextual infos
@@ -873,31 +873,31 @@ type GpuleaseDeposit struct {
 // FilterDeposit is a free log retrieval operation binding the contract event 0xe1fffcc4923d04b559f4d29a8bfc6cda04eb5b0d3c460751c2402c5c5cc9109c.
 //
 // Solidity: event Deposit(address indexed user, uint256 amount)
-func (_Gpulease *GpuleaseFilterer) FilterDeposit(opts *bind.FilterOpts, user []common.Address) (*GpuleaseDepositIterator, error) {
+func (_GPULease *GPULeaseFilterer) FilterDeposit(opts *bind.FilterOpts, user []common.Address) (*GPULeaseDepositIterator, error) {
 
 	var userRule []interface{}
 	for _, userItem := range user {
 		userRule = append(userRule, userItem)
 	}
 
-	logs, sub, err := _Gpulease.contract.FilterLogs(opts, "Deposit", userRule)
+	logs, sub, err := _GPULease.contract.FilterLogs(opts, "Deposit", userRule)
 	if err != nil {
 		return nil, err
 	}
-	return &GpuleaseDepositIterator{contract: _Gpulease.contract, event: "Deposit", logs: logs, sub: sub}, nil
+	return &GPULeaseDepositIterator{contract: _GPULease.contract, event: "Deposit", logs: logs, sub: sub}, nil
 }
 
 // WatchDeposit is a free log subscription operation binding the contract event 0xe1fffcc4923d04b559f4d29a8bfc6cda04eb5b0d3c460751c2402c5c5cc9109c.
 //
 // Solidity: event Deposit(address indexed user, uint256 amount)
-func (_Gpulease *GpuleaseFilterer) WatchDeposit(opts *bind.WatchOpts, sink chan<- *GpuleaseDeposit, user []common.Address) (event.Subscription, error) {
+func (_GPULease *GPULeaseFilterer) WatchDeposit(opts *bind.WatchOpts, sink chan<- *GPULeaseDeposit, user []common.Address) (event.Subscription, error) {
 
 	var userRule []interface{}
 	for _, userItem := range user {
 		userRule = append(userRule, userItem)
 	}
 
-	logs, sub, err := _Gpulease.contract.WatchLogs(opts, "Deposit", userRule)
+	logs, sub, err := _GPULease.contract.WatchLogs(opts, "Deposit", userRule)
 	if err != nil {
 		return nil, err
 	}
@@ -907,8 +907,8 @@ func (_Gpulease *GpuleaseFilterer) WatchDeposit(opts *bind.WatchOpts, sink chan<
 			select {
 			case log := <-logs:
 				// New log arrived, parse the event and forward to the user
-				event := new(GpuleaseDeposit)
-				if err := _Gpulease.contract.UnpackLog(event, "Deposit", log); err != nil {
+				event := new(GPULeaseDeposit)
+				if err := _GPULease.contract.UnpackLog(event, "Deposit", log); err != nil {
 					return err
 				}
 				event.Raw = log
@@ -932,18 +932,18 @@ func (_Gpulease *GpuleaseFilterer) WatchDeposit(opts *bind.WatchOpts, sink chan<
 // ParseDeposit is a log parse operation binding the contract event 0xe1fffcc4923d04b559f4d29a8bfc6cda04eb5b0d3c460751c2402c5c5cc9109c.
 //
 // Solidity: event Deposit(address indexed user, uint256 amount)
-func (_Gpulease *GpuleaseFilterer) ParseDeposit(log types.Log) (*GpuleaseDeposit, error) {
-	event := new(GpuleaseDeposit)
-	if err := _Gpulease.contract.UnpackLog(event, "Deposit", log); err != nil {
+func (_GPULease *GPULeaseFilterer) ParseDeposit(log types.Log) (*GPULeaseDeposit, error) {
+	event := new(GPULeaseDeposit)
+	if err := _GPULease.contract.UnpackLog(event, "Deposit", log); err != nil {
 		return nil, err
 	}
 	event.Raw = log
 	return event, nil
 }
 
-// GpuleaseLeaseCompletedIterator is returned from FilterLeaseCompleted and is used to iterate over the raw logs and unpacked data for LeaseCompleted events raised by the Gpulease contract.
-type GpuleaseLeaseCompletedIterator struct {
-	Event *GpuleaseLeaseCompleted // Event containing the contract specifics and raw log
+// GPULeaseLeaseCompletedIterator is returned from FilterLeaseCompleted and is used to iterate over the raw logs and unpacked data for LeaseCompleted events raised by the GPULease contract.
+type GPULeaseLeaseCompletedIterator struct {
+	Event *GPULeaseLeaseCompleted // Event containing the contract specifics and raw log
 
 	contract *bind.BoundContract // Generic contract to use for unpacking event data
 	event    string              // Event name to use for unpacking event data
@@ -957,7 +957,7 @@ type GpuleaseLeaseCompletedIterator struct {
 // Next advances the iterator to the subsequent event, returning whether there
 // are any more events found. In case of a retrieval or parsing error, false is
 // returned and Error() can be queried for the exact failure.
-func (it *GpuleaseLeaseCompletedIterator) Next() bool {
+func (it *GPULeaseLeaseCompletedIterator) Next() bool {
 	// If the iterator failed, stop iterating
 	if it.fail != nil {
 		return false
@@ -966,7 +966,7 @@ func (it *GpuleaseLeaseCompletedIterator) Next() bool {
 	if it.done {
 		select {
 		case log := <-it.logs:
-			it.Event = new(GpuleaseLeaseCompleted)
+			it.Event = new(GPULeaseLeaseCompleted)
 			if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
 				it.fail = err
 				return false
@@ -981,7 +981,7 @@ func (it *GpuleaseLeaseCompletedIterator) Next() bool {
 	// Iterator still in progress, wait for either a data or an error event
 	select {
 	case log := <-it.logs:
-		it.Event = new(GpuleaseLeaseCompleted)
+		it.Event = new(GPULeaseLeaseCompleted)
 		if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
 			it.fail = err
 			return false
@@ -997,19 +997,19 @@ func (it *GpuleaseLeaseCompletedIterator) Next() bool {
 }
 
 // Error returns any retrieval or parsing error occurred during filtering.
-func (it *GpuleaseLeaseCompletedIterator) Error() error {
+func (it *GPULeaseLeaseCompletedIterator) Error() error {
 	return it.fail
 }
 
 // Close terminates the iteration process, releasing any pending underlying
 // resources.
-func (it *GpuleaseLeaseCompletedIterator) Close() error {
+func (it *GPULeaseLeaseCompletedIterator) Close() error {
 	it.sub.Unsubscribe()
 	return nil
 }
 
-// GpuleaseLeaseCompleted represents a LeaseCompleted event raised by the Gpulease contract.
-type GpuleaseLeaseCompleted struct {
+// GPULeaseLeaseCompleted represents a LeaseCompleted event raised by the GPULease contract.
+type GPULeaseLeaseCompleted struct {
 	LeaseId *big.Int
 	Raw     types.Log // Blockchain specific contextual infos
 }
@@ -1017,21 +1017,21 @@ type GpuleaseLeaseCompleted struct {
 // FilterLeaseCompleted is a free log retrieval operation binding the contract event 0x5a1241b1f059ce7cc7acee21bf522f44360638a58f17c58bd390a0f0af7e1937.
 //
 // Solidity: event LeaseCompleted(uint256 leaseId)
-func (_Gpulease *GpuleaseFilterer) FilterLeaseCompleted(opts *bind.FilterOpts) (*GpuleaseLeaseCompletedIterator, error) {
+func (_GPULease *GPULeaseFilterer) FilterLeaseCompleted(opts *bind.FilterOpts) (*GPULeaseLeaseCompletedIterator, error) {
 
-	logs, sub, err := _Gpulease.contract.FilterLogs(opts, "LeaseCompleted")
+	logs, sub, err := _GPULease.contract.FilterLogs(opts, "LeaseCompleted")
 	if err != nil {
 		return nil, err
 	}
-	return &GpuleaseLeaseCompletedIterator{contract: _Gpulease.contract, event: "LeaseCompleted", logs: logs, sub: sub}, nil
+	return &GPULeaseLeaseCompletedIterator{contract: _GPULease.contract, event: "LeaseCompleted", logs: logs, sub: sub}, nil
 }
 
 // WatchLeaseCompleted is a free log subscription operation binding the contract event 0x5a1241b1f059ce7cc7acee21bf522f44360638a58f17c58bd390a0f0af7e1937.
 //
 // Solidity: event LeaseCompleted(uint256 leaseId)
-func (_Gpulease *GpuleaseFilterer) WatchLeaseCompleted(opts *bind.WatchOpts, sink chan<- *GpuleaseLeaseCompleted) (event.Subscription, error) {
+func (_GPULease *GPULeaseFilterer) WatchLeaseCompleted(opts *bind.WatchOpts, sink chan<- *GPULeaseLeaseCompleted) (event.Subscription, error) {
 
-	logs, sub, err := _Gpulease.contract.WatchLogs(opts, "LeaseCompleted")
+	logs, sub, err := _GPULease.contract.WatchLogs(opts, "LeaseCompleted")
 	if err != nil {
 		return nil, err
 	}
@@ -1041,8 +1041,8 @@ func (_Gpulease *GpuleaseFilterer) WatchLeaseCompleted(opts *bind.WatchOpts, sin
 			select {
 			case log := <-logs:
 				// New log arrived, parse the event and forward to the user
-				event := new(GpuleaseLeaseCompleted)
-				if err := _Gpulease.contract.UnpackLog(event, "LeaseCompleted", log); err != nil {
+				event := new(GPULeaseLeaseCompleted)
+				if err := _GPULease.contract.UnpackLog(event, "LeaseCompleted", log); err != nil {
 					return err
 				}
 				event.Raw = log
@@ -1066,18 +1066,18 @@ func (_Gpulease *GpuleaseFilterer) WatchLeaseCompleted(opts *bind.WatchOpts, sin
 // ParseLeaseCompleted is a log parse operation binding the contract event 0x5a1241b1f059ce7cc7acee21bf522f44360638a58f17c58bd390a0f0af7e1937.
 //
 // Solidity: event LeaseCompleted(uint256 leaseId)
-func (_Gpulease *GpuleaseFilterer) ParseLeaseCompleted(log types.Log) (*GpuleaseLeaseCompleted, error) {
-	event := new(GpuleaseLeaseCompleted)
-	if err := _Gpulease.contract.UnpackLog(event, "LeaseCompleted", log); err != nil {
+func (_GPULease *GPULeaseFilterer) ParseLeaseCompleted(log types.Log) (*GPULeaseLeaseCompleted, error) {
+	event := new(GPULeaseLeaseCompleted)
+	if err := _GPULease.contract.UnpackLog(event, "LeaseCompleted", log); err != nil {
 		return nil, err
 	}
 	event.Raw = log
 	return event, nil
 }
 
-// GpuleaseLeasePausedIterator is returned from FilterLeasePaused and is used to iterate over the raw logs and unpacked data for LeasePaused events raised by the Gpulease contract.
-type GpuleaseLeasePausedIterator struct {
-	Event *GpuleaseLeasePaused // Event containing the contract specifics and raw log
+// GPULeaseLeasePausedIterator is returned from FilterLeasePaused and is used to iterate over the raw logs and unpacked data for LeasePaused events raised by the GPULease contract.
+type GPULeaseLeasePausedIterator struct {
+	Event *GPULeaseLeasePaused // Event containing the contract specifics and raw log
 
 	contract *bind.BoundContract // Generic contract to use for unpacking event data
 	event    string              // Event name to use for unpacking event data
@@ -1091,7 +1091,7 @@ type GpuleaseLeasePausedIterator struct {
 // Next advances the iterator to the subsequent event, returning whether there
 // are any more events found. In case of a retrieval or parsing error, false is
 // returned and Error() can be queried for the exact failure.
-func (it *GpuleaseLeasePausedIterator) Next() bool {
+func (it *GPULeaseLeasePausedIterator) Next() bool {
 	// If the iterator failed, stop iterating
 	if it.fail != nil {
 		return false
@@ -1100,7 +1100,7 @@ func (it *GpuleaseLeasePausedIterator) Next() bool {
 	if it.done {
 		select {
 		case log := <-it.logs:
-			it.Event = new(GpuleaseLeasePaused)
+			it.Event = new(GPULeaseLeasePaused)
 			if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
 				it.fail = err
 				return false
@@ -1115,7 +1115,7 @@ func (it *GpuleaseLeasePausedIterator) Next() bool {
 	// Iterator still in progress, wait for either a data or an error event
 	select {
 	case log := <-it.logs:
-		it.Event = new(GpuleaseLeasePaused)
+		it.Event = new(GPULeaseLeasePaused)
 		if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
 			it.fail = err
 			return false
@@ -1131,19 +1131,19 @@ func (it *GpuleaseLeasePausedIterator) Next() bool {
 }
 
 // Error returns any retrieval or parsing error occurred during filtering.
-func (it *GpuleaseLeasePausedIterator) Error() error {
+func (it *GPULeaseLeasePausedIterator) Error() error {
 	return it.fail
 }
 
 // Close terminates the iteration process, releasing any pending underlying
 // resources.
-func (it *GpuleaseLeasePausedIterator) Close() error {
+func (it *GPULeaseLeasePausedIterator) Close() error {
 	it.sub.Unsubscribe()
 	return nil
 }
 
-// GpuleaseLeasePaused represents a LeasePaused event raised by the Gpulease contract.
-type GpuleaseLeasePaused struct {
+// GPULeaseLeasePaused represents a LeasePaused event raised by the GPULease contract.
+type GPULeaseLeasePaused struct {
 	LeaseId *big.Int
 	Raw     types.Log // Blockchain specific contextual infos
 }
@@ -1151,21 +1151,21 @@ type GpuleaseLeasePaused struct {
 // FilterLeasePaused is a free log retrieval operation binding the contract event 0xb04140f2785e8aa46842b88fdbee148f5bcd51a8e9c4b367b7f431e80a6ed5a1.
 //
 // Solidity: event LeasePaused(uint256 leaseId)
-func (_Gpulease *GpuleaseFilterer) FilterLeasePaused(opts *bind.FilterOpts) (*GpuleaseLeasePausedIterator, error) {
+func (_GPULease *GPULeaseFilterer) FilterLeasePaused(opts *bind.FilterOpts) (*GPULeaseLeasePausedIterator, error) {
 
-	logs, sub, err := _Gpulease.contract.FilterLogs(opts, "LeasePaused")
+	logs, sub, err := _GPULease.contract.FilterLogs(opts, "LeasePaused")
 	if err != nil {
 		return nil, err
 	}
-	return &GpuleaseLeasePausedIterator{contract: _Gpulease.contract, event: "LeasePaused", logs: logs, sub: sub}, nil
+	return &GPULeaseLeasePausedIterator{contract: _GPULease.contract, event: "LeasePaused", logs: logs, sub: sub}, nil
 }
 
 // WatchLeasePaused is a free log subscription operation binding the contract event 0xb04140f2785e8aa46842b88fdbee148f5bcd51a8e9c4b367b7f431e80a6ed5a1.
 //
 // Solidity: event LeasePaused(uint256 leaseId)
-func (_Gpulease *GpuleaseFilterer) WatchLeasePaused(opts *bind.WatchOpts, sink chan<- *GpuleaseLeasePaused) (event.Subscription, error) {
+func (_GPULease *GPULeaseFilterer) WatchLeasePaused(opts *bind.WatchOpts, sink chan<- *GPULeaseLeasePaused) (event.Subscription, error) {
 
-	logs, sub, err := _Gpulease.contract.WatchLogs(opts, "LeasePaused")
+	logs, sub, err := _GPULease.contract.WatchLogs(opts, "LeasePaused")
 	if err != nil {
 		return nil, err
 	}
@@ -1175,8 +1175,8 @@ func (_Gpulease *GpuleaseFilterer) WatchLeasePaused(opts *bind.WatchOpts, sink c
 			select {
 			case log := <-logs:
 				// New log arrived, parse the event and forward to the user
-				event := new(GpuleaseLeasePaused)
-				if err := _Gpulease.contract.UnpackLog(event, "LeasePaused", log); err != nil {
+				event := new(GPULeaseLeasePaused)
+				if err := _GPULease.contract.UnpackLog(event, "LeasePaused", log); err != nil {
 					return err
 				}
 				event.Raw = log
@@ -1200,18 +1200,18 @@ func (_Gpulease *GpuleaseFilterer) WatchLeasePaused(opts *bind.WatchOpts, sink c
 // ParseLeasePaused is a log parse operation binding the contract event 0xb04140f2785e8aa46842b88fdbee148f5bcd51a8e9c4b367b7f431e80a6ed5a1.
 //
 // Solidity: event LeasePaused(uint256 leaseId)
-func (_Gpulease *GpuleaseFilterer) ParseLeasePaused(log types.Log) (*GpuleaseLeasePaused, error) {
-	event := new(GpuleaseLeasePaused)
-	if err := _Gpulease.contract.UnpackLog(event, "LeasePaused", log); err != nil {
+func (_GPULease *GPULeaseFilterer) ParseLeasePaused(log types.Log) (*GPULeaseLeasePaused, error) {
+	event := new(GPULeaseLeasePaused)
+	if err := _GPULease.contract.UnpackLog(event, "LeasePaused", log); err != nil {
 		return nil, err
 	}
 	event.Raw = log
 	return event, nil
 }
 
-// GpuleaseLeaseResumedIterator is returned from FilterLeaseResumed and is used to iterate over the raw logs and unpacked data for LeaseResumed events raised by the Gpulease contract.
-type GpuleaseLeaseResumedIterator struct {
-	Event *GpuleaseLeaseResumed // Event containing the contract specifics and raw log
+// GPULeaseLeaseResumedIterator is returned from FilterLeaseResumed and is used to iterate over the raw logs and unpacked data for LeaseResumed events raised by the GPULease contract.
+type GPULeaseLeaseResumedIterator struct {
+	Event *GPULeaseLeaseResumed // Event containing the contract specifics and raw log
 
 	contract *bind.BoundContract // Generic contract to use for unpacking event data
 	event    string              // Event name to use for unpacking event data
@@ -1225,7 +1225,7 @@ type GpuleaseLeaseResumedIterator struct {
 // Next advances the iterator to the subsequent event, returning whether there
 // are any more events found. In case of a retrieval or parsing error, false is
 // returned and Error() can be queried for the exact failure.
-func (it *GpuleaseLeaseResumedIterator) Next() bool {
+func (it *GPULeaseLeaseResumedIterator) Next() bool {
 	// If the iterator failed, stop iterating
 	if it.fail != nil {
 		return false
@@ -1234,7 +1234,7 @@ func (it *GpuleaseLeaseResumedIterator) Next() bool {
 	if it.done {
 		select {
 		case log := <-it.logs:
-			it.Event = new(GpuleaseLeaseResumed)
+			it.Event = new(GPULeaseLeaseResumed)
 			if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
 				it.fail = err
 				return false
@@ -1249,7 +1249,7 @@ func (it *GpuleaseLeaseResumedIterator) Next() bool {
 	// Iterator still in progress, wait for either a data or an error event
 	select {
 	case log := <-it.logs:
-		it.Event = new(GpuleaseLeaseResumed)
+		it.Event = new(GPULeaseLeaseResumed)
 		if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
 			it.fail = err
 			return false
@@ -1265,19 +1265,19 @@ func (it *GpuleaseLeaseResumedIterator) Next() bool {
 }
 
 // Error returns any retrieval or parsing error occurred during filtering.
-func (it *GpuleaseLeaseResumedIterator) Error() error {
+func (it *GPULeaseLeaseResumedIterator) Error() error {
 	return it.fail
 }
 
 // Close terminates the iteration process, releasing any pending underlying
 // resources.
-func (it *GpuleaseLeaseResumedIterator) Close() error {
+func (it *GPULeaseLeaseResumedIterator) Close() error {
 	it.sub.Unsubscribe()
 	return nil
 }
 
-// GpuleaseLeaseResumed represents a LeaseResumed event raised by the Gpulease contract.
-type GpuleaseLeaseResumed struct {
+// GPULeaseLeaseResumed represents a LeaseResumed event raised by the GPULease contract.
+type GPULeaseLeaseResumed struct {
 	LeaseId *big.Int
 	Raw     types.Log // Blockchain specific contextual infos
 }
@@ -1285,21 +1285,21 @@ type GpuleaseLeaseResumed struct {
 // FilterLeaseResumed is a free log retrieval operation binding the contract event 0x0ec1e889672cca90b2287dde9161b83295c31ef8ed2a8bd943a7f04b183f9167.
 //
 // Solidity: event LeaseResumed(uint256 leaseId)
-func (_Gpulease *GpuleaseFilterer) FilterLeaseResumed(opts *bind.FilterOpts) (*GpuleaseLeaseResumedIterator, error) {
+func (_GPULease *GPULeaseFilterer) FilterLeaseResumed(opts *bind.FilterOpts) (*GPULeaseLeaseResumedIterator, error) {
 
-	logs, sub, err := _Gpulease.contract.FilterLogs(opts, "LeaseResumed")
+	logs, sub, err := _GPULease.contract.FilterLogs(opts, "LeaseResumed")
 	if err != nil {
 		return nil, err
 	}
-	return &GpuleaseLeaseResumedIterator{contract: _Gpulease.contract, event: "LeaseResumed", logs: logs, sub: sub}, nil
+	return &GPULeaseLeaseResumedIterator{contract: _GPULease.contract, event: "LeaseResumed", logs: logs, sub: sub}, nil
 }
 
 // WatchLeaseResumed is a free log subscription operation binding the contract event 0x0ec1e889672cca90b2287dde9161b83295c31ef8ed2a8bd943a7f04b183f9167.
 //
 // Solidity: event LeaseResumed(uint256 leaseId)
-func (_Gpulease *GpuleaseFilterer) WatchLeaseResumed(opts *bind.WatchOpts, sink chan<- *GpuleaseLeaseResumed) (event.Subscription, error) {
+func (_GPULease *GPULeaseFilterer) WatchLeaseResumed(opts *bind.WatchOpts, sink chan<- *GPULeaseLeaseResumed) (event.Subscription, error) {
 
-	logs, sub, err := _Gpulease.contract.WatchLogs(opts, "LeaseResumed")
+	logs, sub, err := _GPULease.contract.WatchLogs(opts, "LeaseResumed")
 	if err != nil {
 		return nil, err
 	}
@@ -1309,8 +1309,8 @@ func (_Gpulease *GpuleaseFilterer) WatchLeaseResumed(opts *bind.WatchOpts, sink 
 			select {
 			case log := <-logs:
 				// New log arrived, parse the event and forward to the user
-				event := new(GpuleaseLeaseResumed)
-				if err := _Gpulease.contract.UnpackLog(event, "LeaseResumed", log); err != nil {
+				event := new(GPULeaseLeaseResumed)
+				if err := _GPULease.contract.UnpackLog(event, "LeaseResumed", log); err != nil {
 					return err
 				}
 				event.Raw = log
@@ -1334,18 +1334,18 @@ func (_Gpulease *GpuleaseFilterer) WatchLeaseResumed(opts *bind.WatchOpts, sink 
 // ParseLeaseResumed is a log parse operation binding the contract event 0x0ec1e889672cca90b2287dde9161b83295c31ef8ed2a8bd943a7f04b183f9167.
 //
 // Solidity: event LeaseResumed(uint256 leaseId)
-func (_Gpulease *GpuleaseFilterer) ParseLeaseResumed(log types.Log) (*GpuleaseLeaseResumed, error) {
-	event := new(GpuleaseLeaseResumed)
-	if err := _Gpulease.contract.UnpackLog(event, "LeaseResumed", log); err != nil {
+func (_GPULease *GPULeaseFilterer) ParseLeaseResumed(log types.Log) (*GPULeaseLeaseResumed, error) {
+	event := new(GPULeaseLeaseResumed)
+	if err := _GPULease.contract.UnpackLog(event, "LeaseResumed", log); err != nil {
 		return nil, err
 	}
 	event.Raw = log
 	return event, nil
 }
 
-// GpuleaseLeaseStartedIterator is returned from FilterLeaseStarted and is used to iterate over the raw logs and unpacked data for LeaseStarted events raised by the Gpulease contract.
-type GpuleaseLeaseStartedIterator struct {
-	Event *GpuleaseLeaseStarted // Event containing the contract specifics and raw log
+// GPULeaseLeaseStartedIterator is returned from FilterLeaseStarted and is used to iterate over the raw logs and unpacked data for LeaseStarted events raised by the GPULease contract.
+type GPULeaseLeaseStartedIterator struct {
+	Event *GPULeaseLeaseStarted // Event containing the contract specifics and raw log
 
 	contract *bind.BoundContract // Generic contract to use for unpacking event data
 	event    string              // Event name to use for unpacking event data
@@ -1359,7 +1359,7 @@ type GpuleaseLeaseStartedIterator struct {
 // Next advances the iterator to the subsequent event, returning whether there
 // are any more events found. In case of a retrieval or parsing error, false is
 // returned and Error() can be queried for the exact failure.
-func (it *GpuleaseLeaseStartedIterator) Next() bool {
+func (it *GPULeaseLeaseStartedIterator) Next() bool {
 	// If the iterator failed, stop iterating
 	if it.fail != nil {
 		return false
@@ -1368,7 +1368,7 @@ func (it *GpuleaseLeaseStartedIterator) Next() bool {
 	if it.done {
 		select {
 		case log := <-it.logs:
-			it.Event = new(GpuleaseLeaseStarted)
+			it.Event = new(GPULeaseLeaseStarted)
 			if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
 				it.fail = err
 				return false
@@ -1383,7 +1383,7 @@ func (it *GpuleaseLeaseStartedIterator) Next() bool {
 	// Iterator still in progress, wait for either a data or an error event
 	select {
 	case log := <-it.logs:
-		it.Event = new(GpuleaseLeaseStarted)
+		it.Event = new(GPULeaseLeaseStarted)
 		if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
 			it.fail = err
 			return false
@@ -1399,19 +1399,19 @@ func (it *GpuleaseLeaseStartedIterator) Next() bool {
 }
 
 // Error returns any retrieval or parsing error occurred during filtering.
-func (it *GpuleaseLeaseStartedIterator) Error() error {
+func (it *GPULeaseLeaseStartedIterator) Error() error {
 	return it.fail
 }
 
 // Close terminates the iteration process, releasing any pending underlying
 // resources.
-func (it *GpuleaseLeaseStartedIterator) Close() error {
+func (it *GPULeaseLeaseStartedIterator) Close() error {
 	it.sub.Unsubscribe()
 	return nil
 }
 
-// GpuleaseLeaseStarted represents a LeaseStarted event raised by the Gpulease contract.
-type GpuleaseLeaseStarted struct {
+// GPULeaseLeaseStarted represents a LeaseStarted event raised by the GPULease contract.
+type GPULeaseLeaseStarted struct {
 	LeaseId  *big.Int
 	User     common.Address
 	Provider common.Address
@@ -1423,21 +1423,21 @@ type GpuleaseLeaseStarted struct {
 // FilterLeaseStarted is a free log retrieval operation binding the contract event 0x4501059f1dbad8e151132c2515ee7ea78d4b2540b9e56e941a03fdb9888efe28.
 //
 // Solidity: event LeaseStarted(uint256 leaseId, address user, address provider, uint256 duration, uint256 amount)
-func (_Gpulease *GpuleaseFilterer) FilterLeaseStarted(opts *bind.FilterOpts) (*GpuleaseLeaseStartedIterator, error) {
+func (_GPULease *GPULeaseFilterer) FilterLeaseStarted(opts *bind.FilterOpts) (*GPULeaseLeaseStartedIterator, error) {
 
-	logs, sub, err := _Gpulease.contract.FilterLogs(opts, "LeaseStarted")
+	logs, sub, err := _GPULease.contract.FilterLogs(opts, "LeaseStarted")
 	if err != nil {
 		return nil, err
 	}
-	return &GpuleaseLeaseStartedIterator{contract: _Gpulease.contract, event: "LeaseStarted", logs: logs, sub: sub}, nil
+	return &GPULeaseLeaseStartedIterator{contract: _GPULease.contract, event: "LeaseStarted", logs: logs, sub: sub}, nil
 }
 
 // WatchLeaseStarted is a free log subscription operation binding the contract event 0x4501059f1dbad8e151132c2515ee7ea78d4b2540b9e56e941a03fdb9888efe28.
 //
 // Solidity: event LeaseStarted(uint256 leaseId, address user, address provider, uint256 duration, uint256 amount)
-func (_Gpulease *GpuleaseFilterer) WatchLeaseStarted(opts *bind.WatchOpts, sink chan<- *GpuleaseLeaseStarted) (event.Subscription, error) {
+func (_GPULease *GPULeaseFilterer) WatchLeaseStarted(opts *bind.WatchOpts, sink chan<- *GPULeaseLeaseStarted) (event.Subscription, error) {
 
-	logs, sub, err := _Gpulease.contract.WatchLogs(opts, "LeaseStarted")
+	logs, sub, err := _GPULease.contract.WatchLogs(opts, "LeaseStarted")
 	if err != nil {
 		return nil, err
 	}
@@ -1447,8 +1447,8 @@ func (_Gpulease *GpuleaseFilterer) WatchLeaseStarted(opts *bind.WatchOpts, sink 
 			select {
 			case log := <-logs:
 				// New log arrived, parse the event and forward to the user
-				event := new(GpuleaseLeaseStarted)
-				if err := _Gpulease.contract.UnpackLog(event, "LeaseStarted", log); err != nil {
+				event := new(GPULeaseLeaseStarted)
+				if err := _GPULease.contract.UnpackLog(event, "LeaseStarted", log); err != nil {
 					return err
 				}
 				event.Raw = log
@@ -1472,18 +1472,18 @@ func (_Gpulease *GpuleaseFilterer) WatchLeaseStarted(opts *bind.WatchOpts, sink 
 // ParseLeaseStarted is a log parse operation binding the contract event 0x4501059f1dbad8e151132c2515ee7ea78d4b2540b9e56e941a03fdb9888efe28.
 //
 // Solidity: event LeaseStarted(uint256 leaseId, address user, address provider, uint256 duration, uint256 amount)
-func (_Gpulease *GpuleaseFilterer) ParseLeaseStarted(log types.Log) (*GpuleaseLeaseStarted, error) {
-	event := new(GpuleaseLeaseStarted)
-	if err := _Gpulease.contract.UnpackLog(event, "LeaseStarted", log); err != nil {
+func (_GPULease *GPULeaseFilterer) ParseLeaseStarted(log types.Log) (*GPULeaseLeaseStarted, error) {
+	event := new(GPULeaseLeaseStarted)
+	if err := _GPULease.contract.UnpackLog(event, "LeaseStarted", log); err != nil {
 		return nil, err
 	}
 	event.Raw = log
 	return event, nil
 }
 
-// GpuleaseOwnershipTransferredIterator is returned from FilterOwnershipTransferred and is used to iterate over the raw logs and unpacked data for OwnershipTransferred events raised by the Gpulease contract.
-type GpuleaseOwnershipTransferredIterator struct {
-	Event *GpuleaseOwnershipTransferred // Event containing the contract specifics and raw log
+// GPULeaseOwnershipTransferredIterator is returned from FilterOwnershipTransferred and is used to iterate over the raw logs and unpacked data for OwnershipTransferred events raised by the GPULease contract.
+type GPULeaseOwnershipTransferredIterator struct {
+	Event *GPULeaseOwnershipTransferred // Event containing the contract specifics and raw log
 
 	contract *bind.BoundContract // Generic contract to use for unpacking event data
 	event    string              // Event name to use for unpacking event data
@@ -1497,7 +1497,7 @@ type GpuleaseOwnershipTransferredIterator struct {
 // Next advances the iterator to the subsequent event, returning whether there
 // are any more events found. In case of a retrieval or parsing error, false is
 // returned and Error() can be queried for the exact failure.
-func (it *GpuleaseOwnershipTransferredIterator) Next() bool {
+func (it *GPULeaseOwnershipTransferredIterator) Next() bool {
 	// If the iterator failed, stop iterating
 	if it.fail != nil {
 		return false
@@ -1506,7 +1506,7 @@ func (it *GpuleaseOwnershipTransferredIterator) Next() bool {
 	if it.done {
 		select {
 		case log := <-it.logs:
-			it.Event = new(GpuleaseOwnershipTransferred)
+			it.Event = new(GPULeaseOwnershipTransferred)
 			if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
 				it.fail = err
 				return false
@@ -1521,7 +1521,7 @@ func (it *GpuleaseOwnershipTransferredIterator) Next() bool {
 	// Iterator still in progress, wait for either a data or an error event
 	select {
 	case log := <-it.logs:
-		it.Event = new(GpuleaseOwnershipTransferred)
+		it.Event = new(GPULeaseOwnershipTransferred)
 		if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
 			it.fail = err
 			return false
@@ -1537,19 +1537,19 @@ func (it *GpuleaseOwnershipTransferredIterator) Next() bool {
 }
 
 // Error returns any retrieval or parsing error occurred during filtering.
-func (it *GpuleaseOwnershipTransferredIterator) Error() error {
+func (it *GPULeaseOwnershipTransferredIterator) Error() error {
 	return it.fail
 }
 
 // Close terminates the iteration process, releasing any pending underlying
 // resources.
-func (it *GpuleaseOwnershipTransferredIterator) Close() error {
+func (it *GPULeaseOwnershipTransferredIterator) Close() error {
 	it.sub.Unsubscribe()
 	return nil
 }
 
-// GpuleaseOwnershipTransferred represents a OwnershipTransferred event raised by the Gpulease contract.
-type GpuleaseOwnershipTransferred struct {
+// GPULeaseOwnershipTransferred represents a OwnershipTransferred event raised by the GPULease contract.
+type GPULeaseOwnershipTransferred struct {
 	PreviousOwner common.Address
 	NewOwner      common.Address
 	Raw           types.Log // Blockchain specific contextual infos
@@ -1558,7 +1558,7 @@ type GpuleaseOwnershipTransferred struct {
 // FilterOwnershipTransferred is a free log retrieval operation binding the contract event 0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0.
 //
 // Solidity: event OwnershipTransferred(address indexed previousOwner, address indexed newOwner)
-func (_Gpulease *GpuleaseFilterer) FilterOwnershipTransferred(opts *bind.FilterOpts, previousOwner []common.Address, newOwner []common.Address) (*GpuleaseOwnershipTransferredIterator, error) {
+func (_GPULease *GPULeaseFilterer) FilterOwnershipTransferred(opts *bind.FilterOpts, previousOwner []common.Address, newOwner []common.Address) (*GPULeaseOwnershipTransferredIterator, error) {
 
 	var previousOwnerRule []interface{}
 	for _, previousOwnerItem := range previousOwner {
@@ -1569,17 +1569,17 @@ func (_Gpulease *GpuleaseFilterer) FilterOwnershipTransferred(opts *bind.FilterO
 		newOwnerRule = append(newOwnerRule, newOwnerItem)
 	}
 
-	logs, sub, err := _Gpulease.contract.FilterLogs(opts, "OwnershipTransferred", previousOwnerRule, newOwnerRule)
+	logs, sub, err := _GPULease.contract.FilterLogs(opts, "OwnershipTransferred", previousOwnerRule, newOwnerRule)
 	if err != nil {
 		return nil, err
 	}
-	return &GpuleaseOwnershipTransferredIterator{contract: _Gpulease.contract, event: "OwnershipTransferred", logs: logs, sub: sub}, nil
+	return &GPULeaseOwnershipTransferredIterator{contract: _GPULease.contract, event: "OwnershipTransferred", logs: logs, sub: sub}, nil
 }
 
 // WatchOwnershipTransferred is a free log subscription operation binding the contract event 0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0.
 //
 // Solidity: event OwnershipTransferred(address indexed previousOwner, address indexed newOwner)
-func (_Gpulease *GpuleaseFilterer) WatchOwnershipTransferred(opts *bind.WatchOpts, sink chan<- *GpuleaseOwnershipTransferred, previousOwner []common.Address, newOwner []common.Address) (event.Subscription, error) {
+func (_GPULease *GPULeaseFilterer) WatchOwnershipTransferred(opts *bind.WatchOpts, sink chan<- *GPULeaseOwnershipTransferred, previousOwner []common.Address, newOwner []common.Address) (event.Subscription, error) {
 
 	var previousOwnerRule []interface{}
 	for _, previousOwnerItem := range previousOwner {
@@ -1590,7 +1590,7 @@ func (_Gpulease *GpuleaseFilterer) WatchOwnershipTransferred(opts *bind.WatchOpt
 		newOwnerRule = append(newOwnerRule, newOwnerItem)
 	}
 
-	logs, sub, err := _Gpulease.contract.WatchLogs(opts, "OwnershipTransferred", previousOwnerRule, newOwnerRule)
+	logs, sub, err := _GPULease.contract.WatchLogs(opts, "OwnershipTransferred", previousOwnerRule, newOwnerRule)
 	if err != nil {
 		return nil, err
 	}
@@ -1600,8 +1600,8 @@ func (_Gpulease *GpuleaseFilterer) WatchOwnershipTransferred(opts *bind.WatchOpt
 			select {
 			case log := <-logs:
 				// New log arrived, parse the event and forward to the user
-				event := new(GpuleaseOwnershipTransferred)
-				if err := _Gpulease.contract.UnpackLog(event, "OwnershipTransferred", log); err != nil {
+				event := new(GPULeaseOwnershipTransferred)
+				if err := _GPULease.contract.UnpackLog(event, "OwnershipTransferred", log); err != nil {
 					return err
 				}
 				event.Raw = log
@@ -1625,18 +1625,18 @@ func (_Gpulease *GpuleaseFilterer) WatchOwnershipTransferred(opts *bind.WatchOpt
 // ParseOwnershipTransferred is a log parse operation binding the contract event 0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0.
 //
 // Solidity: event OwnershipTransferred(address indexed previousOwner, address indexed newOwner)
-func (_Gpulease *GpuleaseFilterer) ParseOwnershipTransferred(log types.Log) (*GpuleaseOwnershipTransferred, error) {
-	event := new(GpuleaseOwnershipTransferred)
-	if err := _Gpulease.contract.UnpackLog(event, "OwnershipTransferred", log); err != nil {
+func (_GPULease *GPULeaseFilterer) ParseOwnershipTransferred(log types.Log) (*GPULeaseOwnershipTransferred, error) {
+	event := new(GPULeaseOwnershipTransferred)
+	if err := _GPULease.contract.UnpackLog(event, "OwnershipTransferred", log); err != nil {
 		return nil, err
 	}
 	event.Raw = log
 	return event, nil
 }
 
-// GpuleaseWithdrawIterator is returned from FilterWithdraw and is used to iterate over the raw logs and unpacked data for Withdraw events raised by the Gpulease contract.
-type GpuleaseWithdrawIterator struct {
-	Event *GpuleaseWithdraw // Event containing the contract specifics and raw log
+// GPULeaseWithdrawIterator is returned from FilterWithdraw and is used to iterate over the raw logs and unpacked data for Withdraw events raised by the GPULease contract.
+type GPULeaseWithdrawIterator struct {
+	Event *GPULeaseWithdraw // Event containing the contract specifics and raw log
 
 	contract *bind.BoundContract // Generic contract to use for unpacking event data
 	event    string              // Event name to use for unpacking event data
@@ -1650,7 +1650,7 @@ type GpuleaseWithdrawIterator struct {
 // Next advances the iterator to the subsequent event, returning whether there
 // are any more events found. In case of a retrieval or parsing error, false is
 // returned and Error() can be queried for the exact failure.
-func (it *GpuleaseWithdrawIterator) Next() bool {
+func (it *GPULeaseWithdrawIterator) Next() bool {
 	// If the iterator failed, stop iterating
 	if it.fail != nil {
 		return false
@@ -1659,7 +1659,7 @@ func (it *GpuleaseWithdrawIterator) Next() bool {
 	if it.done {
 		select {
 		case log := <-it.logs:
-			it.Event = new(GpuleaseWithdraw)
+			it.Event = new(GPULeaseWithdraw)
 			if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
 				it.fail = err
 				return false
@@ -1674,7 +1674,7 @@ func (it *GpuleaseWithdrawIterator) Next() bool {
 	// Iterator still in progress, wait for either a data or an error event
 	select {
 	case log := <-it.logs:
-		it.Event = new(GpuleaseWithdraw)
+		it.Event = new(GPULeaseWithdraw)
 		if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
 			it.fail = err
 			return false
@@ -1690,19 +1690,19 @@ func (it *GpuleaseWithdrawIterator) Next() bool {
 }
 
 // Error returns any retrieval or parsing error occurred during filtering.
-func (it *GpuleaseWithdrawIterator) Error() error {
+func (it *GPULeaseWithdrawIterator) Error() error {
 	return it.fail
 }
 
 // Close terminates the iteration process, releasing any pending underlying
 // resources.
-func (it *GpuleaseWithdrawIterator) Close() error {
+func (it *GPULeaseWithdrawIterator) Close() error {
 	it.sub.Unsubscribe()
 	return nil
 }
 
-// GpuleaseWithdraw represents a Withdraw event raised by the Gpulease contract.
-type GpuleaseWithdraw struct {
+// GPULeaseWithdraw represents a Withdraw event raised by the GPULease contract.
+type GPULeaseWithdraw struct {
 	User   common.Address
 	Amount *big.Int
 	Raw    types.Log // Blockchain specific contextual infos
@@ -1711,31 +1711,31 @@ type GpuleaseWithdraw struct {
 // FilterWithdraw is a free log retrieval operation binding the contract event 0x884edad9ce6fa2440d8a54cc123490eb96d2768479d49ff9c7366125a9424364.
 //
 // Solidity: event Withdraw(address indexed user, uint256 amount)
-func (_Gpulease *GpuleaseFilterer) FilterWithdraw(opts *bind.FilterOpts, user []common.Address) (*GpuleaseWithdrawIterator, error) {
+func (_GPULease *GPULeaseFilterer) FilterWithdraw(opts *bind.FilterOpts, user []common.Address) (*GPULeaseWithdrawIterator, error) {
 
 	var userRule []interface{}
 	for _, userItem := range user {
 		userRule = append(userRule, userItem)
 	}
 
-	logs, sub, err := _Gpulease.contract.FilterLogs(opts, "Withdraw", userRule)
+	logs, sub, err := _GPULease.contract.FilterLogs(opts, "Withdraw", userRule)
 	if err != nil {
 		return nil, err
 	}
-	return &GpuleaseWithdrawIterator{contract: _Gpulease.contract, event: "Withdraw", logs: logs, sub: sub}, nil
+	return &GPULeaseWithdrawIterator{contract: _GPULease.contract, event: "Withdraw", logs: logs, sub: sub}, nil
 }
 
 // WatchWithdraw is a free log subscription operation binding the contract event 0x884edad9ce6fa2440d8a54cc123490eb96d2768479d49ff9c7366125a9424364.
 //
 // Solidity: event Withdraw(address indexed user, uint256 amount)
-func (_Gpulease *GpuleaseFilterer) WatchWithdraw(opts *bind.WatchOpts, sink chan<- *GpuleaseWithdraw, user []common.Address) (event.Subscription, error) {
+func (_GPULease *GPULeaseFilterer) WatchWithdraw(opts *bind.WatchOpts, sink chan<- *GPULeaseWithdraw, user []common.Address) (event.Subscription, error) {
 
 	var userRule []interface{}
 	for _, userItem := range user {
 		userRule = append(userRule, userItem)
 	}
 
-	logs, sub, err := _Gpulease.contract.WatchLogs(opts, "Withdraw", userRule)
+	logs, sub, err := _GPULease.contract.WatchLogs(opts, "Withdraw", userRule)
 	if err != nil {
 		return nil, err
 	}
@@ -1745,8 +1745,8 @@ func (_Gpulease *GpuleaseFilterer) WatchWithdraw(opts *bind.WatchOpts, sink chan
 			select {
 			case log := <-logs:
 				// New log arrived, parse the event and forward to the user
-				event := new(GpuleaseWithdraw)
-				if err := _Gpulease.contract.UnpackLog(event, "Withdraw", log); err != nil {
+				event := new(GPULeaseWithdraw)
+				if err := _GPULease.contract.UnpackLog(event, "Withdraw", log); err != nil {
 					return err
 				}
 				event.Raw = log
@@ -1770,9 +1770,9 @@ func (_Gpulease *GpuleaseFilterer) WatchWithdraw(opts *bind.WatchOpts, sink chan
 // ParseWithdraw is a log parse operation binding the contract event 0x884edad9ce6fa2440d8a54cc123490eb96d2768479d49ff9c7366125a9424364.
 //
 // Solidity: event Withdraw(address indexed user, uint256 amount)
-func (_Gpulease *GpuleaseFilterer) ParseWithdraw(log types.Log) (*GpuleaseWithdraw, error) {
-	event := new(GpuleaseWithdraw)
-	if err := _Gpulease.contract.UnpackLog(event, "Withdraw", log); err != nil {
+func (_GPULease *GPULeaseFilterer) ParseWithdraw(log types.Log) (*GPULeaseWithdraw, error) {
+	event := new(GPULeaseWithdraw)
+	if err := _GPULease.contract.UnpackLog(event, "Withdraw", log); err != nil {
 		return nil, err
 	}
 	event.Raw = log

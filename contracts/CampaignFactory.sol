@@ -4,9 +4,13 @@ pragma solidity ^0.8.28;
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 
-import {IGPULease, LLMFundraising} from "./Campaign.sol";
+import {
+    ICampaignParticipantRegistry,
+    IGPULease,
+    LLMFundraising
+} from "./Campaign.sol";
 
-contract LLMFundraisingFactory is Ownable {
+contract LLMFundraisingFactory is Ownable, ICampaignParticipantRegistry {
     uint256 public nextCampaignId = 1;
 
     IERC20 public immutable usdc;
@@ -14,7 +18,10 @@ contract LLMFundraisingFactory is Ownable {
 
     address[] public campaigns;
     mapping(uint256 => address) public campaignById;
+    mapping(address => bool) public isCampaign;
     mapping(address => address[]) private _campaignsByCreator;
+    mapping(address => address[]) private _campaignsByParticipant;
+    mapping(address => mapping(address => bool)) private _participantInCampaign;
 
     event CampaignCreated(
         uint256 indexed campaignId,
@@ -24,7 +31,12 @@ contract LLMFundraisingFactory is Ownable {
         uint256 startTimestamp,
         uint256 duration,
         uint256 templateId,
+        string campaignName,
         string campaignURI
+    );
+    event CampaignParticipantRegistered(
+        address indexed participant,
+        address indexed campaign
     );
 
     constructor(address _usdc, address _gpuLease) Ownable(msg.sender) {
@@ -40,6 +52,7 @@ contract LLMFundraisingFactory is Ownable {
         uint256 duration,
         uint256 startTimestamp,
         uint256 templateId,
+        string calldata campaignName,
         string calldata campaignURI
     ) external returns (address campaign) {
         uint256 campaignId = nextCampaignId;
@@ -52,15 +65,18 @@ contract LLMFundraisingFactory is Ownable {
                 duration,
                 startTimestamp,
                 templateId,
+                campaignName,
                 campaignURI,
                 address(usdc),
                 address(gpuLease),
+                address(this),
                 msg.sender
             )
         );
 
         campaigns.push(campaign);
         campaignById[campaignId] = campaign;
+        isCampaign[campaign] = true;
         _campaignsByCreator[msg.sender].push(campaign);
 
         emit CampaignCreated(
@@ -71,6 +87,7 @@ contract LLMFundraisingFactory is Ownable {
             startTimestamp,
             duration,
             templateId,
+            campaignName,
             campaignURI
         );
     }
@@ -83,5 +100,45 @@ contract LLMFundraisingFactory is Ownable {
         address creator
     ) external view returns (address[] memory) {
         return _campaignsByCreator[creator];
+    }
+
+    function registerParticipant(address participant) external {
+        require(isCampaign[msg.sender], "not campaign");
+        require(participant != address(0), "zero participant");
+
+        if (_participantInCampaign[participant][msg.sender]) {
+            return;
+        }
+
+        _participantInCampaign[participant][msg.sender] = true;
+        _campaignsByParticipant[participant].push(msg.sender);
+
+        emit CampaignParticipantRegistered(participant, msg.sender);
+    }
+
+    function campaignsByParticipant(
+        address participant
+    ) external view returns (address[] memory) {
+        return _campaignsByParticipant[participant];
+    }
+
+    function participantCampaignsCount(
+        address participant
+    ) external view returns (uint256) {
+        return _campaignsByParticipant[participant].length;
+    }
+
+    function participantCampaignAt(
+        address participant,
+        uint256 index
+    ) external view returns (address) {
+        return _campaignsByParticipant[participant][index];
+    }
+
+    function hasParticipatedInCampaign(
+        address participant,
+        address campaign
+    ) external view returns (bool) {
+        return _participantInCampaign[participant][campaign];
     }
 }
