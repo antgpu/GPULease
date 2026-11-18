@@ -1,0 +1,130 @@
+{
+  "generatedAt": "2026-11-18T12:16:43.862Z",
+  "chainId": "8453",
+  "snapshotBlock": 59060217,
+  "contracts": {
+    "wallet": "0xf6d56d64938b65c6Ad58cFD447Cd1d74b39eEeF2",
+    "lease": "0x1350d6D31dc4c8B1314aF51d99e61cF0E3da938f",
+    "referral": "0x2695d98bF8b233539f5a1Fb823298AA055f2a143",
+    "verifier": "0xcacA2090Ae57d990A1A5CbDC43d8128864380511",
+    "campaignFactory": "0x40C99f349A8cB30d452c9cdc7808221D57427851",
+    "usdc": "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913"
+  },
+  "walletOwner": "0x4833566a2cdF9e12785A1A58610Ff10847E2eE26",
+  "leaseManager": "0x1350d6D31dc4c8B1314aF51d99e61cF0E3da938f",
+  "leaseCount": "22",
+  "activeLeaseIds": [],
+  "totals": {
+    "cash": "576302100",
+    "bonus": "0",
+    "bonusReserve": "0",
+    "frozen": "0",
+    "accounted": "576302100",
+    "tokenBalance": "576302100",
+    "accountedUsdc": "576.3021",
+    "tokenBalanceUsdc": "576.3021"
+  },
+  "completenessCheckPassed": true,
+  "warning": "Verifier events are untrusted user claims. Set databaseVerified=true only after joining against launchpad.verified_wallets.",
+  "accounts": [
+    {
+      "address": "0x33e0dDc7637E5D5dFc069f36a2598E2CF296BF04",
+      "cash": "510492",
+      "bonus": "0",
+      "cashUsdc": "0.510492",
+      "bonusUsdc": "0.0",
+      "verifierUserIdClaim": "03150430-bb0f-bbc5-6118-dc177b23f226",
+      "claimedAccountId": "0x68144092e995228ddcb6fbc0109920f4d952b00d30d6c19f1876c6214191ba90",
+      "verifierClaimBlock": 52846027,
+      "databaseVerified": false
+    },
+    {
+      "address": "0x4833566a2cdF9e12785A1A58610Ff10847E2eE26",
+      "cash": "1000",
+      "bonus": "0",
+      "cashUsdc": "0.001",
+      "bonusUsdc": "0.0",
+      "verifierUserIdClaim": "5d2f1370-32bc-75ff-645d-9f3732a92884",
+      "claimedAccountId": "0x27e8466825b17298fe8ebcebd86b4acfcccc9fcc8bcf640898a5a2c7e2f4b88d",
+      "verifierClaimBlock": 49800380,
+      "databaseVerified": false
+    },
+    {
+      "address": "0x54567B722b34A129F6616C2d09CfC52cC6f5527a",
+      "cash": "6535117",
+      "bonus": "0",
+      "cashUsdc": "6.535117",
+      "bonusUsdc": "0.0",
+      "verifierUserIdClaim": "1e30b8f8-6a6a-4df1-5803-d09457907c85",
+      "claimedAccountId": "0x20028ffefef2bda0c804ebfdcad7ed1421cd8ac62e344f00c2035ce2c6ba307e",
+      "verifierClaimBlock": 52815580,
+      "databaseVerified": false
+    },
+    {
+      "address": "0x59df6C4568b4E6f06b19acdD5fc1793ec1624422",
+      "cash": "44096076",
+      "bonus": "0",
+      "cashUsdc": "44.096076",
+      "bonusUsdc": "0.0",
+      "verifierUserIdClaim": "fde09bc7-2a59-7763-51c8-2a00ab8bf6ca",
+      "claimedAccountId": "0x7a045a8afef60d3ed593d59d2ec7a03bb0ad6956c745c136816017f9e2c86610",
+      "verifierClaimBlock": 47977257,
+      "databaseVerified": false
+    },
+    {
+      "address": "0x6415339435e5d65030C5803F48F2CD773d7Dd72a",
+      "cash": "13073436",
+      "bonus": "0",
+      "cashUsdc": "13.073436",
+      "bonusUsdc": "0.0",
+      "verifierUserIdClaim": "d2d03e85-8afa-917b-28aa-25477513c688",
+      "claimedAccountId": "0x191ac958beb980aeae40965de70cc01a3021c45d9f8693de7952c27ec707bfa0",
+      "verifierClaimBlock": 50785751,
+      "databaseVerified": false
+    },
+    {
+      "address": "0x6f34b0cD7FCA4c0DB4f513613e28565CC3B1F402",
+      "cash": "841691",
+      "bonus": "0",
+      "cashUsdc": "0.841691",
+      "bonusUsdc": "0.0",
+      "verifierUserIdClaim": "3998d6a6-cb43-3b5b-0475-28bb3e9f8ef6",
+      "claimedAccountId": "0xe076623083b4d283c02ac5ae8d816dbb93636bdc4f7f4e8b8f761f0454531628",
+      "verifierClaimBlock": 48363100,
+      "databaseVerified": false
+    },
+    {
+      "address": "0x80CFfF5C710E3e21050AaB272201B574a53A66B3",
+      "cash": "2772202",
+      "bonus": "0",
+      "cashUsdc": "2.772202",
+      "bonusUsdc": "0.0",
+      "verifierUserIdClaim": "5649226b-1f87-f3cc-d8d2-c02fa6232c53",
+      "claimedAccountId": "0xa9377d878894d183a368ca2a37819f8a57223fba5feb007e6cb9b858893ef1c2",
+      "verifierClaimBlock": 58637666,
+      "databaseVerified": false
+    },
+    {
+      "address": "0x8C9A66c5b517B38CA0B258C08B1a6196E70d4eF0",
+      "cash": "500000000",
+      "bonus": "0",
+      "cashUsdc": "500.0",
+      "bonusUsdc": "0.0",
+      "verifierUserIdClaim": "b14e8c32-d6ab-5e94-c81a-8f43bc386e3d",
+      "claimedAccountId": "0x7c8ab7797b6e74c360008b26230706d979aaf5520de9a580f25b9c17b9e4200d",
+      "verifierClaimBlock": 53117214,
+      "databaseVerified": false
+    },
+    {
+      "address": "0xdcDd856BAfE68266C49ed965aB6481d33F097c15",
+      "cash": "8472086",
+      "bonus": "0",
+      "cashUsdc": "8.472086",
+      "bonusUsdc": "0.0",
+      "verifierUserIdClaim": "0df5f95f-506c-80d6-9715-9c74b7dfdd87",
+      "claimedAccountId": "0x98a28a4b099bdc1e8fbee3ac52a16e3f9cb346ce019defec78c176a54a7c419a",
+      "verifierClaimBlock": 52245439,
+      "databaseVerified": false
+    }
+  ]
+}

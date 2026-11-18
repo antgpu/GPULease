@@ -132,7 +132,7 @@ contract LLMFundraising is Ownable, ERC721, ReentrancyGuard {
         address _participantRegistry,
         address _metadataRenderer,
         address _campaignOwner
-    ) external {
+    ) public virtual {
         require(!initialized, "already initialized");
         initialized = true;
 
@@ -369,7 +369,7 @@ contract LLMFundraising is Ownable, ERC721, ReentrancyGuard {
         emit CampaignFailed(totalRaised);
     }
 
-    function _transferToWallet(uint256 amount) internal {
+    function _transferToWallet(uint256 amount) internal virtual {
         require(amount > 0, "no funds");
 
         usdc.forceApprove(address(gpuLeaseWallet), amount);

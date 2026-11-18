@@ -15,11 +15,23 @@ export default defineConfig({
         version: "0.8.31",
         settings: {
           optimizer: {
-            enabled: false,
+            enabled: true,
+            runs: 200,
           },
         },
       },
       production: {
+        version: "0.8.31",
+        settings: {
+          optimizer: {
+            enabled: true,
+            runs: 200,
+          },
+        },
+      },
+      // GPULeaseWalletV2/GPULeaseV2/GPULeaseReferralV2 were deployed with
+      // this profile before the campaign optimizer was enabled.
+      unoptimized: {
         version: "0.8.31",
         settings: {
           optimizer: {
@@ -48,7 +60,9 @@ export default defineConfig({
       type: "http",
       chainType: "op",
       url: process.env.BASE_RPC_URL ?? "https://mainnet.base.org",
-      accounts: [configVariable("BASE_PRIVATE_KEY")],
+      accounts: process.env.BASE_PRIVATE_KEY
+        ? [process.env.BASE_PRIVATE_KEY]
+        : [configVariable("BASE_PRIVATE_KEY")],
     },
   },
   verify: {

@@ -1,0 +1,46 @@
+{
+  "_format": "hh3-artifact-1",
+  "contractName": "IGPULeaseReferralV2",
+  "sourceName": "contracts/GPULeaseV2.sol",
+  "abi": [
+    {
+      "inputs": [],
+      "name": "referralShareBps",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "accountId",
+          "type": "bytes32"
+        }
+      ],
+      "name": "referrerOf",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "linkReferences": {},
+  "deployedLinkReferences": {},
+  "immutableReferences": {},
+  "inputSourceName": "project/contracts/GPULeaseV2.sol",
+  "buildInfoId": "solc-0_8_31-08ce86b766f570d5acefb22734298834f9d37752"
+}

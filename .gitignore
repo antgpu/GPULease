@@ -25,3 +25,8 @@
 .zed
 CLAUDE.md
 AGENTS.md
+
+# Production identity export used only for balance migration
+/migration/verified-wallets.json
+/migration/snapshot-v1-progress.json
+/migration/migration-v2-plan.json

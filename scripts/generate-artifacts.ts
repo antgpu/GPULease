@@ -15,12 +15,32 @@ const contracts = [
     abiFile: "GPULeaseReferral.abi",
   },
   {
+    artifact: "GPULeaseV2",
+    abiFile: "GPULeaseV2.abi",
+  },
+  {
+    artifact: "GPULeaseWalletV2",
+    abiFile: "GPULeaseWalletV2.abi",
+  },
+  {
+    artifact: "GPULeaseReferralV2",
+    abiFile: "GPULeaseReferralV2.abi",
+  },
+  {
     artifact: "LLMFundraising",
     abiFile: "LLMFundraising.abi",
   },
   {
     artifact: "LLMFundraisingFactory",
     abiFile: "LLMFundraisingFactory.abi",
+  },
+  {
+    artifact: "LLMFundraisingV2",
+    abiFile: "LLMFundraisingV2.abi",
+  },
+  {
+    artifact: "LLMFundraisingFactoryV2",
+    abiFile: "LLMFundraisingFactoryV2.abi",
   },
   {
     artifact: "CampaignMetadataRenderer",
